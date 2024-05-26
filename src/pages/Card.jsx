@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import defaultImage from '../assets/defaultImage.jpg'; // Asegúrate de que la ruta es correcta
 
-const Card = ({ id, title, text, img, detailedText }) => {
+const Card = ({ id, title, text, img }) => {
     const imageSrc = img || defaultImage;
-    console.log("Card ok:", { id, title, text, img: imageSrc, detailedText });
+    console.log("Card ok:", { id, title, text, img: imageSrc });
 
     return (
         <div className='max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-white p-2'>
@@ -23,7 +23,7 @@ const Card = ({ id, title, text, img, detailedText }) => {
           <Link 
               to={{
                 pathname: `/details/${id}`,
-                state: { title, text, img: imageSrc, detailedText }
+                state: { title, text, img: imageSrc }
               }}
               className='inline-block mt-4 text-orange-500 underline hover:text-orange-400'>
             Leer Más

@@ -1,25 +1,23 @@
 import React from 'react';
 
-const CtaDetails = ({ title, text, img, detailedText }) => {
+const CtaDetails = ({ title, text, img }) => {
   return (
     <div className="container">
-      <div className="flex flex-col lg:flex-row gap-[70px] md:gap-[90px] items-center justify-between">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '70px', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
-          <div className="flex flex-col items-center justify-center md:justify-start md:items-start lg:w-[570px]">
-            <h1 className="text-center md:text-start text-[36px] leading-[46px] font-[800] md:text-[60px] text-[#181A1E] md:leading-[60px]">
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+            <h1 style={{ textAlign: 'center', fontSize: '36px', fontWeight: '800', color: '#181A1E' }}>
               {title}
             </h1>
-            <p className="text__para text-center md:text-start">
-              {text}
-            </p>
-            <p className="text__para text-center md:text-start">
-              {detailedText}
-            </p>
+            <div 
+              style={{ textAlign: 'center' }}
+              dangerouslySetInnerHTML={{ __html: text }}
+            />
           </div>
         </div>
-        <div className="flex gap-[30px] justify-end">
+        <div style={{ display: 'flex', justifyContent: 'end', gap: '30px' }}>
           <div>
-            <img className="w-full" src={img} alt={title} />
+            <img style={{ width: '100%', height: '52px', objectFit: 'cover', borderRadius: '8px' }} src={img} alt={title} />
           </div>
         </div>
       </div>

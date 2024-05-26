@@ -3,11 +3,11 @@ import { useLocation } from 'react-router-dom';
 
 const DetailPage = () => {
   const location = useLocation();
-  const { title, text, img, detailedText } = location.state || {};
+  const { title, text, img } = location.state || {};
 
-  console.log("Received State in DetailPage:", { title, text, img, detailedText });
+  console.log("Received State in DetailPage:", { title, text, img });
 
-  if (!title || !text || !img || !detailedText) {
+  if (!title || !text || !img) {
     return <p className='text-2xl text-center'>No se encontró información para esta tarjeta.</p>;
   }
 
@@ -18,12 +18,10 @@ const DetailPage = () => {
       </div>
       <div className="w-full lg:w-1/2 flex flex-col justify-center">
         <h1 className="text-3xl font-bold mb-4">{title}</h1>
-        <p className="text-lg mb-6">{text}</p>
-        <p className="text-md">{detailedText}</p>
+        <div className="text-lg mb-6" dangerouslySetInnerHTML={{ __html: text }}></div>
       </div>
     </div>
   );
 }
 
 export default DetailPage;
-

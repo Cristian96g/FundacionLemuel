@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Card from '../components/Card';
 import sections from '../constants/informationCard'; // Ajusta la ruta según sea necesario
-import { truncateText } from '../constants/index';
+//import { truncateText } from '../constants/index';
 
 const Activities = () => {
   const containerRef = useRef([]);
@@ -113,9 +113,9 @@ const Activities = () => {
                     <Card
                       id={card.id}
                       title={card.title}
-                      text={truncateText(card.text, 10)}
+                      text={card.text}
                       img={card.img}
-                      detailedText={card.detailedText}
+                    
                     />
                   </div>
                 ))}
