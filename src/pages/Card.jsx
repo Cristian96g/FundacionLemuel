@@ -21,9 +21,11 @@ const Card = ({ id, title, text, img, detailedText }) => {
           </p>
 
           <Link 
-              to={`/details/${id}`} 
-              state= {{ title, text, img: imageSrc, detailedText }}
-             className='inline-block mt-4 text-orange-500 underline hover:text-orange-400'>
+              to={{
+                pathname: `/details/${id}`,
+                state: { title, text, img: imageSrc, detailedText }
+              }}
+              className='inline-block mt-4 text-orange-500 underline hover:text-orange-400'>
             Leer Más
           </Link>
         </div>
@@ -31,3 +33,4 @@ const Card = ({ id, title, text, img, detailedText }) => {
 }
 
 export default Card;
+
