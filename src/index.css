@@ -50,3 +50,13 @@
         @apply text-[16px] leading-7 mt-3
     }
 }
+
+@media only screen and (max-width: 640px) {
+    .container {
+        @apply px-2;
+    }
+
+    section {
+        @apply px-0;
+    }
+}
