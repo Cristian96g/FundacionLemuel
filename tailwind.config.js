@@ -13,10 +13,10 @@ export default {
         irisBlueColor: '#01B5C5',
         headingColor: '#52658d',
         textColor: '#4E545F',
-    },
-    boxShadow: {
-      panelShadow: 'rgba(17, 12, 46, 0.15) 0px 45px 100px 0px;',
-  },
+      },
+      boxShadow: {
+        panelShadow: 'rgba(17, 12, 46, 0.15) 0px 45px 100px 0px;',
+      },
     },
   },
   plugins: [],
