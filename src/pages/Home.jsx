@@ -1,11 +1,14 @@
 import React from 'react'
 import ngo2 from '../assets/ngo6.jpg'
 import ngo3 from '../assets/ngo4.jpg'
+import ngo4 from '../assets/ngo8.jpg'
 import CardMision from '../components/CardMision';
 import Button from '../components/Button';
 import imgdonate from '../assets/imgDonate.jpg';
 import img2 from '../assets/img_2.jpeg'
 import img3 from '../assets/img_3.jpeg'
+import act3 from '../assets/actividad3.jpg'
+import { FaSchool, FaHeart, FaSmile, FaGift } from 'react-icons/fa';
 
 
 const Home = () => {
@@ -19,13 +22,12 @@ const Home = () => {
               {/* ============== Hero content ============== */}
               <div>
                 <div className="flex flex-col items-center justify-center md:justify-start md:items-start lg:w-[570px]">
-                  <h1 className="text-center md:text-start text-[36px] leading-[46px] font-[800] md:text-[60px] text-[#181A1E] md:leading-[60px]">
+                  <h1 className="text-center  md:text-start text-[36px] leading-[46px] font-[800] md:text-[60px] text-[#181A1E] md:leading-[60px]">
                     Brindando <span className="text-[#f58634]">esperanza y apoyo</span> a la comunidad
                   </h1>
 
-                  <p className="text__para text-center md:text-start">
+                  <p className="text__para text-headingColor text-center md:text-start">
                     Una organización comprometida a extender ayuda a niños y adultos en momentos difíciles.
-                    Una organización comprometida a extender ayuda
                   </p>
                   <Button className={'text-white bg-[#f58634] mt-[24px]'} text="Ver más" />
                 </div>
@@ -39,7 +41,7 @@ const Home = () => {
 
                 <div className="mt-[30px] hidden md:block ">
                   <img src={ngo3} className="w-full mb-[30px]" alt="" />
-                  <img src={ngo3} className="w-full" alt="" />
+                  <img src={ngo4} className="w-full" alt="" />
                 </div>
               </div>
             </div>
@@ -52,23 +54,32 @@ const Home = () => {
       <section class=" text-black">
         <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-10">
           <div class="mx-auto max-w-[36rem] text-center">
-            <h2 class="text-3xl font-bold sm:text-4xl text-black">Estamos En Una Misión De Ayudar</h2>
-            <p class="mt-4 text-gray-600">
-              Fundación Lemuel es una entidad de bien público, sin fines de lucro, creada por la iniciativa de la Pastora Viviana Safita de Villarreal, con la misión de extender ayuda en sentido social, en especial a niños y ancianos en situación de riesgo.
+            <h2 class="text-3xl font-bold sm:text-4xl text-headingColor">Estamos En Una Misión De Ayudar</h2>
+            <p class="mt-4 text-headingColor">
+              La Fundación Lemuel es una entidad de bien público sin fines de lucro, creada por la iniciativa de la Pastora Viviana Safita de Villarreal.
+              Nuestra misión es ofrecer ayuda social a quienes más lo necesitan. Conoce algunas de nuestras campañas.
             </p>
           </div>
-          <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             <CardMision
-              title="Atención Integral a Niños"
-              text="Brindamos cuidado y apoyo integral a niños en situación de riesgo, asegurando su bienestar físico, emocional y espiritual."
+              title="Más Útiles Que Nunca"
+              text="Recolectamos útiles escolares para niños y jóvenes de comunidades vulnerables, apoyando su educación."
+              icon={FaSchool}
             />
             <CardMision
-              title="Asistencia a Ancianos"
-              text="Ofrecemos acompañamiento y asistencia a ancianos que se encuentran en situaciones de vulnerabilidad, proporcionando atención y cuidado personalizado."
+              title="Ayúdanos a Abrigar"
+              text="Juntamos ropa de invierno y mantas para quienes más lo necesitan durante los meses fríos, ayudándolos a mantenerse abrigados."
+              icon={FaHeart}
             />
             <CardMision
-              title="Desarrollo Comunitario"
-              text="Trabajamos en proyectos de desarrollo comunitario para mejorar la calidad de vida de las personas en nuestras comunidades, promoviendo el bienestar y la inclusión social."
+              title="Juntos por una Sonrisa"
+              text="Celebramos el Día del Niño recolectando juguetes y regalos para llevar sonrisas a los niños en su día especial."
+              icon={FaSmile}
+            />
+            <CardMision
+              title="Navidad de Jesús"
+              text="Llevamos cajas navideñas a distintos lugares para compartir la Navidad y llevar alegría a más familias."
+              icon={FaGift}
             />
           </div>
         </div>
@@ -83,9 +94,8 @@ const Home = () => {
           <div class="text-center">
             <h1 class="text-3xl font-bold sm:text-4xl text-headingColor">Actividades Recientes</h1>
 
-            <p class="max-w-lg mx-auto mt-4 text-gray-500">
-              Salami mustard spice tea fridge authentic Chinese food dish salt tasty liquor. Sweet savory foodtruck
-              pie.
+            <p class="max-w-lg mx-auto mt-4 text-headingColor">
+              Las últimas novedades de nuestra fundación
             </p>
           </div>
 
@@ -95,18 +105,19 @@ const Home = () => {
                 <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src={img2} alt="" />
               </div>
 
-              <h1 class="mt-6 text-xl font-semibold text-gray-800 ">
+              <h1 class="mt-6 text-xl font-semibold text-headingColor ">
                 Taller de Compostaje
               </h1>
 
               <hr class="w-32 my-3 text-orange-500" />
 
-              <p class="text-sm text-gray-500 ">
-              Fundación Lemuel y Supervisión de Punto Orgánico realizaron un Taller de Compostaje,
-              promoviendo el valor de los residuos orgánicos y el compromiso ambiental entre los jóvenes. 
+              <p class="text-sm text-headingColor ">
+                🌱La Supervisión de Punto Orgánico realizó hoy, en colaboración con la Fundación Lemuel, el Taller de Compostaje.
+                La Fundación Lemuel ha asumido el compromiso de valorar nuestros residuos orgánicos,
+                lo que representa una oportunidad fundamental para involucrar a los jóvenes y promover acciones a favor del medio ambiente ♻
               </p>
 
-              <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Read more</a>
+              <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Leer Más</a>
             </div>
 
             <div>
@@ -114,38 +125,40 @@ const Home = () => {
                 <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src={img3} alt="" />
               </div>
 
-              <h1 class="mt-6 text-xl font-semibold text-gray-800 ">
-                MAS UTILES QUE NUNCA
+              <h1 class="mt-6 text-xl font-semibold text-headingColor">
+                Mas Útiles Que Nunca
               </h1>
 
               <hr class="w-32 my-3 text-orange-500" />
 
-              <p class="text-sm text-gray-500 ">
-              📣 En el marco de nuestra campaña solidaria, Fundación Lemuel ha recibido la donación de 6 kits escolares.
-              Agradecemos a Exequiel García del Sindicato Petrolero Privado de Caleta Olivia por su generoso apoyo.
-              🙌 Que Dios le bendiga grandemente. 📚✏️🎒
+              <p class="text-sm text-headingColor">
+                📣 En el marco de nuestra campaña solidaria, Fundación Lemuel ha recibido la donación de 6 kits escolares.
+                Agradecemos a Exequiel García del Sindicato Petrolero Privado de Caleta Olivia por su generoso apoyo.
+                🙌 Que Dios le bendiga grandemente. 📚✏️🎒
               </p>
 
-              <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Read more</a>
+              <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Leer Más</a>
             </div>
 
             <div>
               <div class="relative">
-                <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src="https://images.unsplash.com/photo-1597534458220-9fb4969f2df5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" alt="" />
+                <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src={act3} alt="" />
               </div>
 
-              <h1 class="mt-6 text-xl font-semibold text-gray-800 ">
-                Taller de Compostaje
+              <h1 class="mt-6 text-xl font-semibold text-headingColor">
+                Peluqueros Solidarios
               </h1>
 
               <hr class="w-32 my-3 text-orange-500" />
 
               <p class="text-sm text-gray-500 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugit dolorum amet dolores
-                praesentium, alias nam? Tempore
+                ¡Campaña Peluqueros Solidarios! 🥰
+                Ayúdanos a abrigar a quienes más lo necesitan 🙌🏻
+                Acercate a nuestra fundación con algo de abrigo para intercambiar por un corte de pelo🧣✂️
+                Agradecemos a todos los peluqueros/as que colaboran en esta gran campaña.
               </p>
 
-              <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Read more</a>
+              <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Leer Más</a>
             </div>
           </div>
 
@@ -160,13 +173,13 @@ const Home = () => {
             </div>
             <div className='w-[100%] md:w-1/3 mx-auto py-[2rem] p-4'>
               <div class="mb-6">
-                <input type="text" placeholder="Nombre" name="nombre" class="input__style"/>
+                <input type="text" placeholder="Nombre" name="nombre" class="input__style" />
               </div>
               <div class="mb-6">
-                <input type="email" placeholder="Email" name="email" class="input__style"/>
+                <input type="email" placeholder="Email" name="email" class="input__style" />
               </div>
               <div class="mb-6">
-                <input type="text" placeholder="Telefono" name="telefono" class="input__style"/>
+                <input type="text" placeholder="Telefono" name="telefono" class="input__style" />
               </div>
               <div class="mb-4">
                 <textarea rows="3" placeholder="Deja tu comentario.." name="mensaje" class="input__style resize-none"></textarea>
