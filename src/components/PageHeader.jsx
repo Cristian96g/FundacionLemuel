@@ -11,9 +11,9 @@ const PageHeader = ({title}) => {
             </span>
             
         </h2>
-        <span class="block text-orange-300 text-xl pt-2">
+        {/* <span class="block text-orange-300 text-xl pt-2">
                 Contactarse con nosotros
-            </span>
+            </span> */}
     </div>
 </div>
   );

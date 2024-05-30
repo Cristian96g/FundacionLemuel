@@ -4,8 +4,10 @@ import ngo3 from '../assets/ngo4.jpg'
 import CardMision from '../components/CardMision';
 import Button from '../components/Button';
 import imgdonate from '../assets/imgDonate.jpg';
-import img2 from '../assets/img_2.jpeg'
-import img3 from '../assets/img_3.jpeg'
+import { truncateText } from '../constants/index';
+import informationCard from "../constants/informationCardHome.js"
+import ContactForm from '../components/ContactForm.jsx';
+
 
 
 const Home = () => {
@@ -50,7 +52,7 @@ const Home = () => {
       {/* ============== Mision content ============== */}
 
       <section class=" text-black">
-        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-10">
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-4 lg:pt-0">
           <div class="mx-auto max-w-[36rem] text-center">
             <h2 class="text-3xl font-bold sm:text-4xl text-black">Estamos En Una Misión De Ayudar</h2>
             <p class="mt-4 text-gray-600">
@@ -74,14 +76,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ============== 3er content ============== */}
-
-      {/* ============== 4to content ============== */}
+      {/* ============== Actividades Recientes ============== */}
 
       <section class="bg-white ">
         <div class="container px-6 py-10 mx-auto">
           <div class="text-center">
-            <h1 class="text-3xl font-bold sm:text-4xl text-headingColor">Actividades Recientes</h1>
+            <h1 class="text-3xl font-bold sm:text-4xl text-black">Actividades Recientes</h1>
 
             <p class="max-w-lg mx-auto mt-4 text-gray-500">
               Salami mustard spice tea fridge authentic Chinese food dish salt tasty liquor. Sweet savory foodtruck
@@ -90,90 +90,44 @@ const Home = () => {
           </div>
 
           <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3">
-            <div>
-              <div class="relative">
-                <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src={img2} alt="" />
+            {informationCard.map((information) => (
+              <div>
+                <div class="relative">
+                  <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src={information.img} alt="" />
+                </div>
+
+                <h1 class="mt-6 text-xl font-semibold text-gray-800 ">
+                  {information.title}
+                </h1>
+
+                <hr class="w-32 my-3 text-orange-500" />
+
+                <p class="text-sm text-gray-500 ">
+                  {truncateText(information.text, 140)}
+                </p>
+
+                <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Leer más</a>
               </div>
-
-              <h1 class="mt-6 text-xl font-semibold text-gray-800 ">
-                Taller de Compostaje
-              </h1>
-
-              <hr class="w-32 my-3 text-orange-500" />
-
-              <p class="text-sm text-gray-500 ">
-              Fundación Lemuel y Supervisión de Punto Orgánico realizaron un Taller de Compostaje,
-              promoviendo el valor de los residuos orgánicos y el compromiso ambiental entre los jóvenes. 
-              </p>
-
-              <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Read more</a>
-            </div>
-
-            <div>
-              <div class="relative">
-                <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src={img3} alt="" />
-              </div>
-
-              <h1 class="mt-6 text-xl font-semibold text-gray-800 ">
-                MAS UTILES QUE NUNCA
-              </h1>
-
-              <hr class="w-32 my-3 text-orange-500" />
-
-              <p class="text-sm text-gray-500 ">
-              📣 En el marco de nuestra campaña solidaria, Fundación Lemuel ha recibido la donación de 6 kits escolares.
-              Agradecemos a Exequiel García del Sindicato Petrolero Privado de Caleta Olivia por su generoso apoyo.
-              🙌 Que Dios le bendiga grandemente. 📚✏️🎒
-              </p>
-
-              <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Read more</a>
-            </div>
-
-            <div>
-              <div class="relative">
-                <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src="https://images.unsplash.com/photo-1597534458220-9fb4969f2df5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" alt="" />
-              </div>
-
-              <h1 class="mt-6 text-xl font-semibold text-gray-800 ">
-                Taller de Compostaje
-              </h1>
-
-              <hr class="w-32 my-3 text-orange-500" />
-
-              <p class="text-sm text-gray-500 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugit dolorum amet dolores
-                praesentium, alias nam? Tempore
-              </p>
-
-              <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Read more</a>
-            </div>
+            ))}
           </div>
 
-          <div className='flex flex-col rounded-lg bg-[#f5f6fa] border border-orange-100 mt-12 md:flex-row'>
-            <div className="relative w-[100%] h-auto md:rounded-l-lg rounded-t-lg bg-gradient-to-b from-black to-orange-900 md:w-3/5">
-              <img className="md:absolute md:h-full h-[25rem] w-full object-cover md:rounded-l-lg rounded-t-lg opacity-30" src={imgdonate} alt="" />
+          {/* bg-[#f5f6fa] */}
+        </div>
+        <div className="container">
+          <div className='flex flex-col rounded-lg  border shadow-lg shadow-[rgba(251,146,60,0.24)] border-orange-100 mt-12 md:mt-[6rem] md:flex-row'>
+            <div className="relative w-[100%] h-auto md:rounded-l-lg md:rounded-tr-none rounded-t-lg bg-gradient-to-b from-black to-orange-900 md:w-3/5">
+              <img className="md:absolute md:h-full h-[25rem] w-full object-cover md:rounded-l-lg md:rounded-tr-none rounded-t-lg opacity-30" src={imgdonate} alt="" />
               <div className='absolute w-[100%] px-8 py-14 md:p-0 md:w-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <p className="font-bold text-sm text-center sm:text-left sm:text-xl lg:text-xl xl:text-2xl text-white my-2">¿Querés contribuir con nosotros?</p>
                 <p className="text-3xl text-center lg:text-5xl sm:text-left text-white font-bold my-2">Sumate a Nuestra Causa</p>
                 <p className="text-sm text-center sm:text-lg sm:text-justify text-white leading-none my-3 z-0">Tu apoyo es fundamental para continuar extendiendo nuestras manos de ayuda a quienes más lo necesitan y sustentar nuestras actividades. Cada contribución cuenta, puedes hacer la diferencia a través de Mercado Pago o contactarnos en nuestras redes sociales. También estamos disponibles en nuestra dirección.</p>
               </div>
             </div>
-            <div className='w-[100%] md:w-1/3 mx-auto py-[2rem] p-4'>
-              <div class="mb-6">
-                <input type="text" placeholder="Nombre" name="nombre" class="input__style"/>
-              </div>
-              <div class="mb-6">
-                <input type="email" placeholder="Email" name="email" class="input__style"/>
-              </div>
-              <div class="mb-6">
-                <input type="text" placeholder="Telefono" name="telefono" class="input__style"/>
-              </div>
-              <div class="mb-4">
-                <textarea rows="3" placeholder="Deja tu comentario.." name="mensaje" class="input__style resize-none"></textarea>
-              </div>
-              <Button className={'text-white bg-orange-500 '} text="COLABORAR" />
-            </div>
 
+            <div className='w-[100%] md:w-1/3 mx-auto py-[2rem] p-4'>
+
+              <ContactForm row={"3"} textButton={"Colaborar"} />
+            </div>
           </div>
         </div>
       </section>

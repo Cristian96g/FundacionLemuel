@@ -49,16 +49,16 @@ const Footer = () => {
                 </div>
                 <hr class="my-6 border-orange-500 sm:mx-auto  lg:my-8" />
                 <div class="sm:flex sm:items-center sm:justify-between">
-                    <span class="text-sm text-orange-600 sm:text-center ">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+                    <span class="text-sm text-orange-600 sm:text-center ">© 2024 <a href="https://www.potrerodigital.org/" class="hover:underline">Potrero Digital</a>. Todos los derechos reservados.
                     </span>
                     <div class="flex mt-4 sm:justify-center sm:mt-0">
                         <a href="https://www.facebook.com/profile.php?id=100081438307111&locale=az_AZ" target='_blank' class="text-orange-500 hover:text-gray-900 ">
                             <FaFacebook size={20} />
-                            <span class="sr-only">Facebook page</span>
+                            <span class="sr-only">Facebook</span>
                         </a>
                         <a href="https://www.instagram.com/fundacion_lemuel_co/" target='_blank' class="text-orange-500 hover:text-gray-900  ms-5">
                             <FaInstagram size={20} />
-                            <span class="sr-only">Discord community</span>
+                            <span class="sr-only">Instagram</span>
                         </a>
 
                     </div>

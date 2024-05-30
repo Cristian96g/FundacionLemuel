@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '../components/Button'
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdContact, IoMdTime } from "react-icons/io";
 import ContactForm from '../components/ContactForm';
@@ -58,9 +57,9 @@ const Contact = () => {
                   </li>
                 </ul>
               </div>
-              <div className="card h-fit max-w-6xl px-5 md:p-4" id="form">
-                <div className="relative rounded-lg bg-white px-8 shadow-lg sm:p-12">
-                  <ContactForm />
+              <div className="card h-fit max-w-6xl px-5 md:p-4 md:pt-0" id="form">
+                <div className="relative rounded-lg bg-white px-8 shadow-lg shadow-[rgba(251,146,60,0.24)] sm:p-12">
+                  <ContactForm row={"5"} textButton={"Enviar"}/>
                   <div>
                   </div>
                 </div>
@@ -78,8 +77,8 @@ const Contact = () => {
             <h1 className="title__main pt-2">Nuestra Ubicación</h1>
 
             <p className="mt-3 text-gray-500 max-w-xl  mx-auto">Estamos ubicados en Caleta Olivia.
-¡Visítanos en nuestros horarios de atención. Estamos ansiosos por recibirte y brindarte la mejor experiencia. Acércate a disfrutar de las diferentes actividades que ofrecemos en la fundación.
-</p>
+              ¡Visítanos en nuestros horarios de atención. Estamos ansiosos por recibirte y brindarte la mejor experiencia. Acércate a disfrutar de las diferentes actividades que ofrecemos en la fundación.
+            </p>
           </div>
           <div className="overflow-hidden mt-[2rem] rounded-lg lg:col-span-2 h-96 ">
             <iframe width="100%" height="100%" frameborder="0" title="map" marginheight="0" marginwidth="0"

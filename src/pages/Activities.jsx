@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Card from '../components/Card';
 import sections from '../constants/informationCard'; // Ajusta la ruta según sea necesario
-//import { truncateText } from '../constants/index';
+import PageHeader from '../components/PageHeader';
 
 const Activities = () => {
   const containerRef = useRef([]);
@@ -89,7 +89,8 @@ const Activities = () => {
   };
 
   return (
-    <div className='container mx-auto my-10'>
+    <div className='container mx-auto mb-12'>
+      <PageHeader title={"Actividades"} />
       {sections.map((section, index) => (
         <div key={index} className='my-5'>
           <div className='sm:text-center sm:max-w-md sm:mx-auto'>

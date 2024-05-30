@@ -5,7 +5,6 @@ import Contact from './pages/Contact';
 import Activities from './pages/Activities';
 import DetailPage from './pages/DetailPage';
 import About from './pages/About';
-import Error404 from './pages/Error404';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -22,7 +21,6 @@ function App() {
         <Route path='/details/:id' element={<DetailPage />} />
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='*' element={<Error404/>} />
       </Routes>
       <Footer />
       </BrowserRouter>
