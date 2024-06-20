@@ -2,61 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-.active{
-    @apply text-orange-900;
+.active {
+  @apply text-orange-900;
 }
 
-@layer base{
-    section{
-        @apply py-[75px];
-    }
+@layer base {
+  section {
+    @apply py-[75px];
+  }
 }
 
 @layer components {
-    .container{
-        @apply max-w-full w-[1280px] px-5 mx-auto;
-    }
+  .container {
+    @apply max-w-full w-[1280px] px-5 mx-auto;
+  }
 
-    .header{
-        @apply  w-full h-[100px] leading-[100px];
-    }
-    .heading{
-        @apply text-[44px] leading-[54px] font-[700] text-headingColor;
-    }
+  .header {
+    @apply w-full h-[100px] leading-[100px];
+  }
+  .heading {
+    @apply text-[44px] leading-[54px] font-[700] text-headingColor;
+  }
 
-    .text__para{
-        @apply text-[18px] leading-[30px] font-[400] mt-[18px];
-    }
+  .text__para {
+    @apply text-[18px] leading-[30px] font-[400] mt-[18px];
+  }
+
+  .card-container {
+    @apply max-w-sm mx-auto p-2 flex flex-col justify-between h-full;
+  }
+
+  .card-title {
+    @apply text-xl font-semibold text-[#52658d] text-justify;
+  }
+
+  .card-text {
+    @apply text-sm text-[#52658d] text-justify flex-grow;
+  }
+
+  .read-more {
+    @apply inline-block mt-4 text-orange-500 underline hover:text-orange-400;
+  }
 }
 
+@media only screen and (max-width: 1024px) {
+  .container {
+    @apply w-full;
+  }
 
-@media only screen and (max-width: 1024px){
-    .container{
-        @apply w-full;
-    }
-    
-    section{
-        @apply px-[35px];
-    }
+  section {
+    @apply px-[35px];
+  }
 }
 
+@media only screen and (max-width: 768px) {
+  .heading {
+    @apply text-[26px] leading-[36px];
+  }
 
-@media only screen and (max-width: 768px){
-    .heading{
-        @apply text-[26px] leading-[36px]
-    }
-
-    .text__para{
-        @apply text-[16px] leading-7 mt-3
-    }
+  .text__para {
+    @apply text-[16px] leading-7 mt-3;
+  }
 }
 
 @media only screen and (max-width: 640px) {
-    .container {
-        @apply px-2;
-    }
+  .container {
+    @apply px-2;
+  }
 
-    section {
-        @apply px-0;
-    }
+  section {
+    @apply px-0;
+  }
 }
