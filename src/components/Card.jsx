@@ -1,17 +1,42 @@
-const Card = ({ title, fecha, texto, img, link }) => {
-    return (
-        <a rel="noopener noreferrer" href={link} className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50">
-            <div className="relative">
-                <div className="absolute top-4 left-4 bg-blue-700 shadow-sm shadow-black text-white w-auto px-2 h-6 flex items-center justify-center rounded-md">
-                    <a href="#" class="uppercase font-bold tracking-wide text-white text-sm">Social</a>
-                </div>
-            </div>
-            <img role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src={img} />
-            <div className="p-6 space-y-2">
-                <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">In usu laoreet repudiare legendos</h3>
-                <span className="text-xs dark:text-gray-600">January 21, 2021</span>
-            </div>
-        </a>
-    )
+import React from 'react';
+import { Link } from 'react-router-dom';
+import defaultImage from '../assets/defaultImage.jpg'; // Asegúrate de que la ruta es correcta
+
+const truncateText = (text, maxLength) => {
+  return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
 }
-export default Card
+
+const Card = ({ id, title, text, img }) => {
+  const imageSrc = img || defaultImage;
+
+  return (
+    <div className='card-container group hover:no-underline focus:no-underline dark:bg-white'>
+      <div className='relative'>
+        <img className="object-cover object-center w-full h-60 rounded-lg" src={imageSrc} alt={title} />
+      </div>
+
+      <div className="flex flex-col justify-between h-full">
+        <div>
+          <h1 className='mt-6 card-title'>
+            {title}
+          </h1>
+          <hr className='w-32 my-3 text-orange-500' />
+          <p className='card-text'>
+            {truncateText(text.replace(/<[^>]+>/g, ''), 50)}
+          </p>
+        </div>
+
+        <div className='mt-auto'>
+          <Link
+            to={`/details/${id}`}
+            state={{ title, text, img: imageSrc }}
+            className='read-more'>
+            Leer Más
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Card;

@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import Button from './Button';
 
-const ContactForm = () => {
+const ContactForm = ({row,textButton}) => {
 
     const {
         register,
@@ -29,7 +29,7 @@ const ContactForm = () => {
                     <input
                         {...register('nombre', { required: "*El nombre es requerido" })}
                         type="text"
-                        placeholder="Nombre" name="nombre" class="input__style " value="" />
+                        placeholder="Nombre" name="nombre" class="input__style " />
                     {errors.nombre && <p className='text-red-500'>{errors.nombre.message}</p>}
                 </div>
                 <div class="mb-6">
@@ -42,7 +42,7 @@ const ContactForm = () => {
                             }
                         })}
                         type="email"
-                        placeholder="Email" name="email" class="input__style" value="" />
+                        placeholder="Email" name="email" class="input__style" />
                     {errors.email && <p className="text-red-500">{errors.email.message}</p>}
                 </div>
                 <div class="mb-6">
@@ -55,20 +55,20 @@ const ContactForm = () => {
                             }
                         })}
                         type="text"
-                        placeholder="Telefono" name="telefono" class="input__style" value="" />
+                        placeholder="Telefono" name="telefono" class="input__style" />
                     {errors.telefono && <p className="text-red-500">{errors.telefono.message}</p>}
                 </div>
                 <div class="mb-6">
                     <textarea
                         {...register("mensaje", { required: "El mensaje es requerido" })}
-                        rows="6" placeholder="*Deja tu comentario.." name="mensaje" class="input__style resize-none"></textarea>
+                        rows={row} placeholder="*Deja tu comentario.." name="mensaje" class="input__style resize-none"></textarea>
                     {errors.mensaje && <p className="text-red-500">{errors.mensaje.message}</p>}
                 </div>
                 <div>
                     <Button
                         disabled={isSubmitting}
-                        text={"Enviar"}
-                        className={'text-white bg-[#f58634]'}>
+                        text={textButton}
+                        className={'text-white bg-[#f58634] mb-6 md:mb-0'}>
                     </Button>
                 </div>
             </form>
