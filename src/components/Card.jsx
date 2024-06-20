@@ -7,30 +7,36 @@ const truncateText = (text, maxLength) => {
 }
 
 const Card = ({ id, title, text, img }) => {
-    const imageSrc = img || defaultImage;
+  const imageSrc = img || defaultImage;
 
-    return (
-        <div className='max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-white p-2'>
-          <div className='relative'>
-            <img className="object-cover object-center w-full h-60 rounded-lg" src={imageSrc} alt={title} />
-          </div>
+  return (
+    <div className='card-container group hover:no-underline focus:no-underline dark:bg-white'>
+      <div className='relative'>
+        <img className="object-cover object-center w-full h-60 rounded-lg" src={imageSrc} alt={title} />
+      </div>
 
-          <h1 className='mt-6 text-xl font-semibold text-[#52658d] text-justify'>
+      <div className="flex flex-col justify-between h-full">
+        <div>
+          <h1 className='mt-6 card-title'>
             {title}
           </h1>
-          <hr className='w-32 my-3 text-orange-500'/>
-          <p className='text-sm text-[#52658d] text-justify'>
+          <hr className='w-32 my-3 text-orange-500' />
+          <p className='card-text'>
             {truncateText(text.replace(/<[^>]+>/g, ''), 50)}
           </p>
+        </div>
 
-          <Link 
-              to={`/details/${id}`} 
-              state= {{ title, text, img: imageSrc}}
-             className='inline-block mt-4 text-orange-500 underline hover:text-orange-400'>
+        <div className='mt-auto'>
+          <Link
+            to={`/details/${id}`}
+            state={{ title, text, img: imageSrc }}
+            className='read-more'>
             Leer Más
           </Link>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default Card;
