@@ -9,6 +9,16 @@ const Activities = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [startScroll, setStartScroll] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const getCardWidth = (index) => {
     if (containerRef.current[index]) {
@@ -27,16 +37,6 @@ const Activities = () => {
   useEffect(() => {
     const initialScrollX = sections.map((_, index) => adjustScrollX(index, 0));
     setScrollX(initialScrollX);
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const initialScrollX = sections.map((_, index) => adjustScrollX(index, 0));
-      setScrollX(initialScrollX);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
@@ -64,6 +64,7 @@ const Activities = () => {
   }, [scrollX]);
 
   const onMouseDown = (e, index) => {
+    if (isMobile) return;
     setIsDragging(true);
     setStartX(e.pageX);
     setStartScroll(scrollX[index]);
@@ -71,7 +72,7 @@ const Activities = () => {
   };
 
   const onMouseMove = (e, index) => {
-    if (!isDragging) return;
+    if (!isDragging || isMobile) return;
     const distance = e.pageX - startX;
     const newScrollX = adjustScrollX(index, startScroll + distance);
     setScrollX(prev => prev.map((x, i) => (i === index ? newScrollX : x)));
@@ -98,10 +99,10 @@ const Activities = () => {
             <p className="my-2 text-gray-600">{section.paragraph}</p>
           </div>
           <div className="relative" style={{ width: '100%' }}
-               onMouseDown={(e) => onMouseDown(e, index)}
-               onMouseMove={(e) => onMouseMove(e, index)}
-               onMouseUp={() => onMouseUp(index)}
-               onMouseLeave={() => onMouseUp(index)}
+               onMouseDown={(e) => !isMobile && onMouseDown(e, index)}
+               onMouseMove={(e) => !isMobile && onMouseMove(e, index)}
+               onMouseUp={() => !isMobile && onMouseUp(index)}
+               onMouseLeave={() => !isMobile && onMouseUp(index)}
                ref={el => containerRef.current[index] = el}>
             <button className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
                     onClick={() => handleNavigation(index, -1)}>
@@ -116,7 +117,6 @@ const Activities = () => {
                       title={card.title}
                       text={card.text}
                       img={card.img}
-                    
                     />
                   </div>
                 ))}
