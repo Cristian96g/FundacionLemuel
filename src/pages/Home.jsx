@@ -7,8 +7,12 @@ import Button from '../components/Button';
 import imgdonate from '../assets/imgDonate.jpg';
 import img2 from '../assets/img_2.jpeg'
 import img3 from '../assets/img_3.jpeg'
-import act3 from '../assets/actividad3.jpg'
+import act1 from '../assets/actividad.jpg'
+import act2 from '../assets/actividad3.jpg'
+import act3 from '../assets/actividad2.jpg'
+import act4 from '../assets/actividad4.jpg'
 import { FaSchool, FaHeart, FaSmile, FaGift } from 'react-icons/fa';
+import { truncateText } from '../constants/index.js';
 
 
 const Home = () => {
@@ -27,7 +31,10 @@ const Home = () => {
                   </h1>
 
                   <p className="text__para text-headingColor text-center md:text-start">
-                    Una organización comprometida a extender ayuda a niños y adultos en momentos difíciles.
+                    Una organización comprometida a brindar ayuda y contención a niños, adolescentes, jóvenes y adultos
+                    en situación de vulnerabilidad social, así como también a ofrecer apoyo en momentos difíciles de la vida.
+                    Nuestro objetivo es consolidar y afianzar al ser humano, trabajando de manera integral para que cada individuo
+                    pueda alcanzar la plenitud deseada.
                   </p>
                   <Button className={'text-white bg-[#f58634] mt-[24px]'} text="Ver más" />
                 </div>
@@ -95,69 +102,73 @@ const Home = () => {
             <h1 class="text-3xl font-bold sm:text-4xl text-headingColor">Actividades Recientes</h1>
 
             <p class="max-w-lg mx-auto mt-4 text-headingColor">
-              Las últimas novedades de nuestra fundación
+              Las últimas novedades de nuestra fundación del mes de mayo
             </p>
           </div>
 
-          <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3">
+          <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 xl:grid-cols-4">
+            {/* ============== Card #1 ============== */}
             <div>
               <div class="relative">
-                <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src={img2} alt="" />
+                <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src={act1} alt="" />
               </div>
 
               <h1 class="mt-6 text-xl font-semibold text-headingColor ">
-                Taller de Compostaje
+                Capacitacion instituto cookins
               </h1>
-
               <hr class="w-32 my-3 text-orange-500" />
-
               <p class="text-sm text-headingColor ">
-                🌱La Supervisión de Punto Orgánico realizó hoy, en colaboración con la Fundación Lemuel, el Taller de Compostaje.
-                La Fundación Lemuel ha asumido el compromiso de valorar nuestros residuos orgánicos,
-                lo que representa una oportunidad fundamental para involucrar a los jóvenes y promover acciones a favor del medio ambiente ♻
+                Capacitacion en hotelería, gastronomía y tareas generales en conjunto con Asociación espacio red comunidad y la prestigiosa empresa Cookins
               </p>
-
               <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Leer Más</a>
             </div>
-
+            {/* ============== Card #2 ============== */}
             <div>
               <div class="relative">
-                <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src={img3} alt="" />
+                <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src={act2} alt="" />
               </div>
 
-              <h1 class="mt-6 text-xl font-semibold text-headingColor">
-                Mas Útiles Que Nunca
+              <h1 class="mt-6 text-xl font-semibold text-headingColor ">
+                Peluqueros solidarios 4ta edición.
               </h1>
-
               <hr class="w-32 my-3 text-orange-500" />
-
-              <p class="text-sm text-headingColor">
-                📣 En el marco de nuestra campaña solidaria, Fundación Lemuel ha recibido la donación de 6 kits escolares.
-                Agradecemos a Exequiel García del Sindicato Petrolero Privado de Caleta Olivia por su generoso apoyo.
-                🙌 Que Dios le bendiga grandemente. 📚✏️🎒
+              <p class="text-sm text-headingColor ">
+                ¡Campaña Peluqueros Solidarios! 🥰 Ayúdanos a abrigar a quienes más lo necesitan 🙌🏻
+                Acercate a nuestra fundación con algo de abrigo para intercambiar por un corte de pelo🧣✂️
+                Agradecemos a todos los peluqueros/as que colaboran en esta gran campaña.
               </p>
-
               <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Leer Más</a>
             </div>
-
+            {/* ============== Card #3 ============== */}
             <div>
               <div class="relative">
                 <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src={act3} alt="" />
               </div>
 
-              <h1 class="mt-6 text-xl font-semibold text-headingColor">
-                Peluqueros Solidarios
+              <h1 class="mt-6 text-xl font-semibold text-headingColor ">
+                Campaña solidaria ayúdanos abrigar.
               </h1>
-
               <hr class="w-32 my-3 text-orange-500" />
-
-              <p class="text-sm text-gray-500 ">
-                ¡Campaña Peluqueros Solidarios! 🥰
-                Ayúdanos a abrigar a quienes más lo necesitan 🙌🏻
-                Acercate a nuestra fundación con algo de abrigo para intercambiar por un corte de pelo🧣✂️
-                Agradecemos a todos los peluqueros/as que colaboran en esta gran campaña.
+              <p class="text-sm text-headingColor ">
+                La campaña "Ayúdanos a abrigar" ha regresado en 2024 con el mismo espíritu solidario de años anteriores.
+                Esta iniciativa se dedica a recolectar camperas, térmicos y frazadas durante eventos solidarios para distribuirlos entre personas en situación de necesidad.
+                Con la colaboración de voluntarios y donantes, la campaña busca llevar abrigo y esperanza a quienes más lo necesitan,
+                reafirmando el compromiso de la comunidad con la solidaridad y el cuidado mutuo.
               </p>
-
+              <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Leer Más</a>
+            </div>
+            {/* ============== Card #4 ============== */}
+            <div>
+              <div class="relative">
+                <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src={act4} alt="" />
+              </div>
+              <h1 class="mt-6 text-xl font-semibold text-headingColor ">
+                Peña Folclórica 25 de mayo.
+              </h1>
+              <hr class="w-32 my-3 text-orange-500" />
+              <p class="text-sm text-headingColor ">
+                Organizamos la Peña Folclórica en conmemoración del 25 de mayo. Las colaboraciones recibidas durante este evento nos permiten donar camperas, térmicos y frazadas a través de nuestra campaña "Ayúdanos a abrigar".
+              </p>
               <a href="#" class="inline-block mt-4 text-orange-500 underline hover:text-orange-400">Leer Más</a>
             </div>
           </div>
