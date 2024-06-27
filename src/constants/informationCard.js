@@ -25,9 +25,23 @@ import religion4 from '../assets/religion4.jpeg';
 import espiritual3 from '../assets/espiritual3.jpeg';
 import espiritual5 from '../assets/espiritual5.jpeg';
 import espiritual6 from '../assets/espiritual6.jpeg';
+import construccion1 from '../assets/construccion_1.jpeg';
+import construccion2 from '../assets/construccion_2.jpeg';
+import construccion3 from '../assets/construccion_3.jpeg';
+import construccion4 from '../assets/construccion_4.jpeg';
+import construccion5 from '../assets/construccion_5.jpeg';
+import construccion6 from '../assets/construccion_6.jpeg';
+import construccion7 from '../assets/construccion_7.jpeg';
+import construccion8 from '../assets/construccion_8.jpeg';
+import construccion9 from '../assets/construccion_9.jpeg';
+import construccion10 from '../assets/construccion_10.jpeg';
 
-// Información de las tarjetas
+/**
+ * @constant {Array} sections
+ * @description Listado de secciones y sus tarjetas correspondientes, cada una con su título, párrafo, texto y la imagen asociada.
+ */
 const sections = [
+  // Datos de las tarjetas de la sección "Social"
   {
     title: "Social",
     paragraph: "Realizamos campañas sociales para ayudar a la comunidad",
@@ -61,7 +75,10 @@ const sections = [
         img: modulosalimentarios
       },
       {
-        id: "Colonias", title: "Colonias", text: `Actividades en diferentes espacios
+        id: "Colonias",
+        title: "Colonias",
+        section: "Social",
+        text: `Actividades en diferentes espacios
       <p>⚽️ Playon deportivo M.E.D.E.A</p>
       <p>🧩 Escuelita</p>
       <p>🤹 SUM</p>
@@ -91,6 +108,7 @@ const sections = [
       }
     ]
   },
+  // Datos de las tarjetas de la sección "Deportiva"
   {
     title: "Deportiva",
     paragraph: "Desarrollamos diferentes actividades para la inclusión de nuestro jóvenes",
@@ -136,6 +154,7 @@ const sections = [
       }
     ]
   },
+  // Datos de las tarjetas de la sección "Cultural"
   {
     title: "Cultural",
     paragraph: "Incluimos diferentes propuestas sobre temáticas que ocurren en la actualidad",
@@ -207,6 +226,7 @@ const sections = [
       }
     ]
   },
+  // Datos de las tarjetas de la sección "Espiritual"
   {
     title: "Espiritual",
     paragraph: "Encuentros grupales de fortaleza",
@@ -241,9 +261,86 @@ const sections = [
         id: "culto-de-niños",
         title: "🎊 culto de niños 👶🏻👧🏽🧑🏼",
         text: `El día sábado 23 de diciembre se celebra un hermoso culto de niños, dónde cada heredero del rey llevaron diferentes servicios adelante, donde también se hizo entrega de certificados a todos los niños que forman parte del D.I.N (Departamento de Instrucción al Niño).
-          <p>Glorioso lo vivido, dónde llegaron familias completas a recibir el gran regalo de Dios 🎁 nuestra salvación por medio de 𝐉𝐞𝐬𝐮𝐜𝐫𝐢𝐬𝐭𝐨 ✝️.</p> 
+          <p>Glorioso lo vivido, dónde llegaron familias completas a recibir el gran regalo de Dios 🎁 nuestra salvación por medio de 𝐉𝐞𝐬𝐮𝐬𝐜𝐫𝐢𝐬𝐭𝐨 ✝️.</p> 
           <p>📖 Pero Jesús dijo: Dejad a los niños venir.</p>`,
         img: religion4
+      }
+    ]
+  },
+  // Datos de las tarjetas de la sección "Construcción"
+  {
+    title: "Construcción",
+    paragraph: "",
+    cards: [
+      {
+        id: "Cn",
+        title: "",
+        active: true,
+        text: "",
+        img: construccion1
+      },
+      {
+        id: "Cn",
+        title: "",
+        active: true,
+        text: "",
+        img: construccion2
+      },
+      {
+        id: "Cn",
+        title: "",
+        active: true,
+        text: "",
+        img: construccion3
+      },
+      {
+        id: "Cn",
+        title: "",
+        active: true,
+        text: "",
+        img: construccion4
+      },
+      {
+        id: "Cn",
+        title: "",
+        active: true,
+        text: "",
+        img: construccion5
+      },
+      {
+        id: "Cn",
+        title: "",
+        active: true,
+        text: "",
+        img: construccion6
+      },
+      {
+        id: "Cn",
+        title: "",
+        active: true,
+        text: "",
+        img: construccion7
+      },
+      {
+        id: "Cn",
+        title: "",
+        active: true,
+        text: "",
+        img: construccion8
+      },
+      {
+        id: "Cn",
+        title: "",
+        active: true,
+        text: "",
+        img: construccion9
+      },
+      {
+        id: "Cn",
+        title: "",
+        active: true,
+        text: "",
+        img: construccion10
       }
     ]
   }
