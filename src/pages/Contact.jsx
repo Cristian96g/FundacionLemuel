@@ -39,8 +39,8 @@ const Contact = () => {
                     <div className="ml-4 mb-4">
                       <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900">Contacto
                       </h3>
-                      <p className="text-gray-600">Telefono: +54 (2966) 6549-7890</p>
-                      <p className="text-gray-600">Email: ecommerce@gmail.com</p>
+                      <p className="text-gray-600">Telefono: +54 (297) 4191960</p>
+                      <p className="text-gray-600">Email: Fundacionlemuelcaletaolivia@gmail.com</p>
                     </div>
                   </li>
                   <li className="flex">
@@ -51,8 +51,8 @@ const Contact = () => {
                     <div className="ml-4 mb-4">
                       <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900">Horario
                         de atención</h3>
-                      <p className="text-gray-600">Lunes - Viernes: 08:00 - 17:00</p>
-                      <p className="text-gray-600">Sabados &amp; Domingos: 08:00 - 12:00</p>
+                      <p className="text-gray-600">Lunes - Viernes: 09:00 - 14:00</p>
+                      <p className="text-gray-600">Sabados &amp; Domingos: 17:00 - 22:00</p>
                     </div>
                   </li>
                 </ul>
