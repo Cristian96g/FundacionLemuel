@@ -107,3 +107,12 @@ body {
 .nav-button-right {
   right: 0;
 }
+.truncate {
+  white-space: nowrap; /* No permite que el texto se envuelva a la siguiente línea */
+  overflow: hidden; /* Oculta el texto que no cabe en el contenedor */
+  text-overflow: ellipsis; /* Añade "..." al final del texto truncado */
+}
+.single-line {
+  white-space: nowrap; /* No permite que el texto se envuelva a la siguiente línea */
+}
+

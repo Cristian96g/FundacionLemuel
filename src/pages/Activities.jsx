@@ -137,7 +137,7 @@ const Activities = () => {
         <div key={index} className='my-5'>
           <div className='sm:text-center sm:max-w-md sm:mx-auto'>
             <h1 className={`my-2 text-[#52658d] text-3xl font-extrabold sm:text-4xl`}>{section.title}</h1>
-            <p className="my-2 text-gray-600">{section.paragraph}</p>
+            <p className="my-2 text-gray-600 single-line">{section.paragraph}</p> {/* Aplica la clase single-line aquí */}
           </div>
           <div className="relative" style={{ width: '100%' }}
                onMouseDown={(e) => !isMobile && onMouseDown(e, index)}
