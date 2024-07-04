@@ -4,18 +4,16 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-:root{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color-scheme: "white";
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color-scheme: "white";
 }
-
 
 .color__sub {
   color: #495024;
 }
-
 
 .input__style {
   width: 100%;
@@ -28,14 +26,14 @@ body {
   outline-offset: 2px;
 }
 
-.label__style{
+.label__style {
   display: block;
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  font-size: 0.875rem/* 14px */;
-  line-height: 1.25rem/* 20px */;
-  margin-bottom: 0.5rem/* 8px */;
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+  margin-bottom: 0.5rem /* 8px */;
 }
 
 .title__main {
@@ -66,6 +64,7 @@ body {
 .btn__principal:hover {
   background-color: #495024;
 }
+
 .carousel-container-wrapper {
   display: flex;
   align-items: center;
@@ -107,12 +106,15 @@ body {
 .nav-button-right {
   right: 0;
 }
+
 .truncate {
   white-space: nowrap; /* No permite que el texto se envuelva a la siguiente línea */
   overflow: hidden; /* Oculta el texto que no cabe en el contenedor */
   text-overflow: ellipsis; /* Añade "..." al final del texto truncado */
 }
+
 .single-line {
   white-space: nowrap; /* No permite que el texto se envuelva a la siguiente línea */
+  overflow: hidden; /* Oculta el texto que no cabe en el contenedor */
+  text-overflow: ellipsis; /* Añade "..." al final del texto truncado */
 }
-

@@ -10,7 +10,7 @@ import PageHeader from '../components/PageHeader';
  */
 const Activities = () => {
   const containerRef = useRef([]);
-  const [scrollX, setScrollX] = useState([0, 0, 0, 0]);
+  const [scrollX, setScrollX] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [startScroll, setStartScroll] = useState(0);
@@ -137,7 +137,7 @@ const Activities = () => {
         <div key={index} className='my-5'>
           <div className='sm:text-center sm:max-w-md sm:mx-auto'>
             <h1 className={`my-2 text-[#52658d] text-3xl font-extrabold sm:text-4xl`}>{section.title}</h1>
-            <p className="my-2 text-gray-600 single-line">{section.paragraph}</p> {/* Aplica la clase single-line aquí */}
+            <p className="my-2 text-gray-600 truncate">{section.paragraph}</p> {/* Aplica la clase truncate aquí */}
           </div>
           <div className="relative" style={{ width: '100%' }}
                onMouseDown={(e) => !isMobile && onMouseDown(e, index)}
@@ -145,7 +145,7 @@ const Activities = () => {
                onMouseUp={() => !isMobile && onMouseUp(index)}
                onMouseLeave={() => !isMobile && onMouseUp(index)}
                ref={el => containerRef.current[index] = el}>
-            <button className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+            <button className="absolute left-0 top-1/2 -translate-y-1/2 z-10 nav-button nav-button-left"
                     onClick={() => handleNavigation(index, -1)}>
               &#10094;
             </button>
@@ -164,7 +164,7 @@ const Activities = () => {
                 ))}
               </div>
             </div>
-            <button className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+            <button className="absolute right-0 top-1/2 -translate-y-1/2 z-10 nav-button nav-button-right"
                     onClick={() => handleNavigation(index, 1)}>
               &#10095;
             </button>

@@ -24,7 +24,7 @@ const truncateText = (text, maxLength) => {
  * @param {boolean} props.active - Indica si la tarjeta está activa.
  * @returns {JSX.Element} La tarjeta renderizada.
  */
-const Card = ({ id, title, text, img ,active}) => {
+const Card = ({ id, title, text, img, active }) => {
   const imageSrc = img || defaultImage;
 
   return (
@@ -34,26 +34,25 @@ const Card = ({ id, title, text, img ,active}) => {
       </div>
       {active ? (
         // No se muestra el Link si active es true
-       null
+        null
       ) : (
-      <div className="flex flex-col justify-between h-full">
-        <div>
-          <h1 className='mt-6 card-title'>
-            {title}
-          </h1>
-          <hr className='w-32 my-3 text-orange-500' />
-          <p className='card-text'>
-            {truncateText(text.replace(/<[^>]+>/g, ''), 50)}
-          </p>
+        <div className="flex flex-col justify-between h-full">
+          <div>
+            <h1 className='mt-6 card-title truncate'>
+              {title}
+            </h1>
+            <hr className='w-32 my-3 text-orange-500' />
+            <p className='card-text truncate'>
+              {truncateText(text.replace(/<[^>]+>/g, ''), 50)}
+            </p>
+          </div>
+          <Link
+            to={`/details/${id}`}
+            state={{ title, text, img: imageSrc }}
+            className='read-more'>
+            Leer Más
+          </Link>
         </div>
-        <Link
-          to={`/details/${id}`}
-          state={{ title, text, img: imageSrc }}
-          className='read-more'>
-          Leer Más
-        </Link>
-      
-      </div>
       )}
     </div>
   );

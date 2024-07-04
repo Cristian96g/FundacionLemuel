@@ -1,4 +1,4 @@
-import merienda from '../assets/merienda.jpg';
+import merienda from '../assets/merienda.jpeg';
 import roperoComunitario from '../assets/roperoComunitario.jpeg';
 import modulosNavideños from '../assets/ModuloNavideños.jpeg';
 import social5 from '../assets/social5.jpeg';
@@ -14,7 +14,7 @@ import campañaCultural from '../assets/campañaCultural.jpg';
 import cultural2 from '../assets/cultural2.jpeg';
 import modulosalimentarios from '../assets/ModulosAlimentarios.jpeg';
 import cultural3 from '../assets/cultural3.jpeg';
-import cultural4 from '../assets/cultural4.jpg';
+import cultural4 from '../assets/cultural4.jpeg';
 import cultural5 from '../assets/cultural5.jpeg';
 import cultural6 from '../assets/cultural6.jpg';
 import cultural7 from '../assets/cultural7.jpeg';
@@ -78,18 +78,25 @@ const sections = [
         id: "Colonias",
         title: "Colonias",
         section: "Social",
-        text: `Actividades en diferentes espacios
-      <p>⚽️ Playon deportivo M.E.D.E.A</p>
-      <p>🧩 Escuelita</p>
-      <p>🤹 SUM</p>
-      <p>🏐 Cancha de vóley</p>
-      <p>⛳ Plaza saludable</p>
-      <p>🪁 Circunvalación</p>
-      <p>🥊 Entrenamiento de boxeo</p>
-      <p>💃 Coreografias 🤗</p>
-      <p>⚜Todas las patrullas disfrazadas realizamos kermesse,taller de dibujo,fútbol,voley,caminata todos juntos y al llegar a la meta compartimos helado para todos. 🍨</p>
-      <p>⛳ Al finalizar se compartió una Rica merienda con pizzetas, variedades de jugos y torta. 🍰</p>
-      <p> 🫂Se entregaran presentes para los niños y despedimos una edición más de Colonias Lemuel ❤️. </p>`,
+        text: `
+            <p>Las Colonias Lemuel son una actividad gratuita para niños de todas las edades, con dos ediciones anuales: Colonias de Verano y Colonias de Invierno. Estas colonias invitan a todos los niños de la comunidad a participar en salidas, recreación, juegos y mucha diversión.</p>
+            <p>Actividades en diferentes espacios:</p>
+            <p>⚽️ Playón deportivo M.E.D.E.A</p>
+            <p>🧩 Escuelita</p>
+            <p>🤹 SUM</p>
+            <p>🏐 Cancha de vóley</p>
+            <p>⛳ Plaza saludable</p>
+            <p>🪁 Circunvalación</p>
+            <p>🥊 Entrenamiento de boxeo</p>
+            <p>💃 Coreografías 🤗</p>
+
+            <p>⚜ Todas las patrullas disfrazadas realizamos kermesse, taller de dibujo, fútbol, vóley, caminata todos juntos y al llegar a la meta compartimos helado para todos. 🍨</p>
+
+            <p>⛳ Al finalizar se compartió una rica merienda con pizzetas, variedades de jugos y torta. 🍰</p>
+
+            <p>🫂 Se entregarán presentes para los niños y despedimos una edición más de Colonias Lemuel ❤️.</p>
+          </section>
+          `,
         img: social5
       },
       {
@@ -214,8 +221,8 @@ const sections = [
       },
       {
         id: "Clases-folcloricas",
-        title: "Clases de folclore  “Sabaout”",
-        text: `La Fundación Lemuel ofrece clases de folclore "Sabahot"💃 donde niños, adolescentes y jóvenes pueden sumergirse en la rica cultura argentina a través de la danza. Esta iniciativa no solo promueve el aprendizaje del folclore, sino que también fomenta el orgullo y la apreciación de las tradiciones locales. Es una oportunidad emocionante para conectar con la identidad cultural y disfrutar de la expresión artística a través de la danza folclórica argentina 👧🏼👦🏻`,
+        title: "Clases de folclore  “Sabaot”",
+        text: `La Fundación Lemuel ofrece clases de folclore "“Sabaot”"💃 donde niños, adolescentes y jóvenes pueden sumergirse en la rica cultura argentina a través de la danza. Esta iniciativa no solo promueve el aprendizaje del folclore, sino que también fomenta el orgullo y la apreciación de las tradiciones locales. Es una oportunidad emocionante para conectar con la identidad cultural y disfrutar de la expresión artística a través de la danza folclórica argentina 👧🏼👦🏻`,
         img: cultural8
       },
       {
@@ -234,7 +241,7 @@ const sections = [
       {
         id: "I.B.M.-Instituto-Biblico-M.E.D.E.A",
         title: "I.B.M. - Instituto Biblico M.E.D.E.A",
-        text: `Descripción breve de I.B.M. - Instituto Biblico M.E.D.E.A`,
+        text: `I.B.M.: Instituto Bíblico M.E.D.E.A. 📖 Conocimiento de la palabra de Dios y enseñanza al alcance de todos 🙏.`,
         img: espiritual3
       },
       {
@@ -248,21 +255,19 @@ const sections = [
       {
         id: "Desarrollo-juvenil",
         title: "Desarrollo juvenil",
-        text: `Descripción breve de Desarrollo juvenil`,
+        text: `El ministerio M.E.D.E.A. cuenta con un grupo de jóvenes 👥 donde se desarrollan diferentes actividades que conciernen a la juventud, ya sea en la enseñanza 📚, la predicación 🎤, campañas 🎉, casas de oración 🏠🙏, visitación 🚶‍♂️, oración 🙏 y momentos de recreación 🎈.`,
         img: espiritual5
       },
       {
         id: "Retiro-de-jovenes",
         title: "Retiro de jóvenes",
-        text: `Descripción breve de retiro de jóvenes`,
+        text: `Crean un entorno alejado de las distracciones de la vida 🚫📱, brindan oportunidades de edificar la hermandad y la unidad 🤝, aumentando la edificación de la resiliencia 💪 y fortaleciendo la responsabilidad personal 🧠.`,
         img: espiritual6
       },
       {
         id: "culto-de-niños",
         title: "🎊 culto de niños 👶🏻👧🏽🧑🏼",
-        text: `El día sábado 23 de diciembre se celebra un hermoso culto de niños, dónde cada heredero del rey llevaron diferentes servicios adelante, donde también se hizo entrega de certificados a todos los niños que forman parte del D.I.N (Departamento de Instrucción al Niño).
-          <p>Glorioso lo vivido, dónde llegaron familias completas a recibir el gran regalo de Dios 🎁 nuestra salvación por medio de 𝐉𝐞𝐬𝐮𝐬𝐜𝐫𝐢𝐬𝐭𝐨 ✝️.</p> 
-          <p>📖 Pero Jesús dijo: Dejad a los niños venir.</p>`,
+        text: `📅 D.I.N (Departamento de Instrucción al Niño) se trabaja cada miércoles y domingo durante los días de reuniones presenciales locales. 🏠 Los niños reciben instrucción bíblica 📖 y también comida o merienda 🍽️.`,
         img: religion4
       }
     ]
