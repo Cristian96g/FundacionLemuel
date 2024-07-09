@@ -81,7 +81,7 @@ const Contact = () => {
             </p>
           </div>
           <div className="overflow-hidden mt-[2rem] rounded-lg lg:col-span-2 h-96 ">
-            <iframe width="100%" height="100%" frameborder="0" title="map" marginheight="0" marginwidth="0"
+            <iframe width="100%" height="100%" frameBorder="0" title="map" marginHeight="0" marginWidth="0"
               scrolling="no"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1208.1159369846127!2d-67.5474473!3d-46.4460234!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbde5dfa4ddf8502f%3A0xa63521c1a726b59!2sM.E.D.E.A%20Anexo%20Caleta%20Olivia!5e1!3m2!1ses-419!2sar!4v1716392519522!5m2!1ses-419!2sar"></iframe>
 
