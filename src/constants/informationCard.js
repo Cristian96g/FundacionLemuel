@@ -79,23 +79,7 @@ const sections = [
         title: "Colonias",
         section: "Social",
         text: `
-            <p>Las Colonias Lemuel son una actividad gratuita para niños de todas las edades, con dos ediciones anuales: Colonias de Verano y Colonias de Invierno. Estas colonias invitan a todos los niños de la comunidad a participar en salidas, recreación, juegos y mucha diversión.</p>
-            <p>Actividades en diferentes espacios:</p>
-            <p>⚽️ Playón deportivo M.E.D.E.A</p>
-            <p>🧩 Escuelita</p>
-            <p>🤹 SUM</p>
-            <p>🏐 Cancha de vóley</p>
-            <p>⛳ Plaza saludable</p>
-            <p>🪁 Circunvalación</p>
-            <p>🥊 Entrenamiento de boxeo</p>
-            <p>💃 Coreografías 🤗</p>
-
-            <p>⚜ Todas las patrullas disfrazadas realizamos kermesse, taller de dibujo, fútbol, vóley, caminata todos juntos y al llegar a la meta compartimos helado para todos. 🍨</p>
-
-            <p>⛳ Al finalizar se compartió una rica merienda con pizzetas, variedades de jugos y torta. 🍰</p>
-
-            <p>🫂 Se entregarán presentes para los niños y despedimos una edición más de Colonias Lemuel ❤️.</p>
-          </section>
+           Las Colonias Lemuel son una actividad gratuita para niños de todas las edades, con dos ediciones anuales: Colonias de Verano ☀️ y Colonias de Invierno ❄️. Estas colonias invitan a todos los niños de la comunidad a participar en salidas 🚶‍♂️, recreación 🎨, juegos 🎲 y mucha diversión 🎉.
           `,
         img: social5
       },

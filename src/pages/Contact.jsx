@@ -72,8 +72,7 @@ const Contact = () => {
       <div className="bg-white container max-w-6xl mx-auto pt-6">
         <div className=" px-6 py-12">
           <div className="text-center">
-            <p className="font-medium color__sub">Ubicación</p>
-
+      
             <h1 className="title__main pt-2">Nuestra Ubicación</h1>
 
             <p className="mt-3 text-gray-500 max-w-xl  mx-auto">Estamos ubicados en Caleta Olivia.
