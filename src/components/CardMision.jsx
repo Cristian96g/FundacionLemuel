@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const CardMision = ({ text, title, icon: Icon }) => {
   return (
@@ -9,7 +9,7 @@ const CardMision = ({ text, title, icon: Icon }) => {
         {text}
       </p>
     </div>
-  )
+  );
 }
 
-export default CardMision
+export default CardMision;

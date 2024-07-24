@@ -1,72 +1,39 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { navLinks } from '../constants/index.js';
-import logo from '../assets/logo.png';
-import { FaInstagram } from "react-icons/fa6";
-import { FaFacebook } from "react-icons/fa6";
-
+import { Link } from 'react-router-dom';
+import { FaInstagram, FaFacebook } from "react-icons/fa";
+import logo from '../assets/logo.png'; // Asegúrate de que la ruta sea correcta
 
 const Footer = () => {
-    return (
-    
-        <footer class="bg-white ">
-            <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-                <div class="md:flex md:justify-between">
-                    <div class="mb-6 md:mb-0">
-                        <a href="https://flowbite.com/" class="flex items-center">
-                            <img src={logo} class="h-8 me-3" alt="FlowBite Logo" />
-                        </a>
-                    </div>
-                    <div class="grid grid-cols-2 gap-8 sm:gap-6">
-                        <div>
-                            <h2 class="mb-6 text-sm font-semibold text-orange-700 uppercase ">Nosotros</h2>
-                            <ul class="text-orange-500  font-medium">
-                                {navLinks.map((nav) => (
-                                    <li class="mb-2" key={nav.id}>
-                                        <NavLink
-                                            to={`/${nav.id}`}
-                                            lass="hover:underline"
-                                        >
-                                            {nav.title}
-                                        </NavLink>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h2 class="mb-6 text-sm font-semibold text-orange-700 uppercase ">Legal</h2>
-                            <ul class="text-orange-500  font-medium">
-                                <li class="mb-2">
-                                    <a href="#" class="hover:underline">Politicas de Privacidad</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="hover:underline">Terminos y Condiciones</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <hr class="my-6 border-orange-500 sm:mx-auto  lg:my-8" />
-                <div class="sm:flex sm:items-center sm:justify-between">
-                    <span class="text-sm text-orange-600 sm:text-center ">© 2024 <a href="https://www.potrerodigital.org/" class="hover:underline">Potrero Digital</a>. Todos los derechos reservados.
-                    </span>
-                    <div class="flex mt-4 sm:justify-center sm:mt-0">
-                        <a href="https://www.facebook.com/profile.php?id=100081438307111&locale=az_AZ" target='_blank' class="text-orange-500 hover:text-gray-900 ">
-                            <FaFacebook size={20} />
-                            <span class="sr-only">Facebook</span>
-                        </a>
-                        <a href="https://www.instagram.com/fundacion_lemuel_co/" target='_blank' class="text-orange-500 hover:text-gray-900  ms-5">
-                            <FaInstagram size={20} />
-                            <span class="sr-only">Instagram</span>
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-    );
+  return (
+    <footer className="bg-white py-6">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row md:justify-between items-center">
+          <div className="mb-6 md:mb-0">
+            <Link to="/">
+              <img src={logo} className="h-8" alt="Fundación Lemuel Logo" />
+            </Link>
+          </div>
+          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+            <Link to="/about" className="text-orange-500 hover:text-orange-700">Nosotros</Link>
+            <Link to="/activities" className="text-orange-500 hover:text-orange-700">Actividades</Link>
+            <Link to="/contact" className="text-orange-500 hover:text-orange-700">Contacto</Link>
+          </div>
+          <div className="mt-6 md:mt-0 flex space-x-4">
+            <a href="https://www.facebook.com/profile.php?id=100081438307111&locale=az_AZ" target='_blank' rel="noopener noreferrer" className="text-orange-500 hover:text-orange-700">
+              <FaFacebook size={20} />
+            </a>
+            <a href="https://www.instagram.com/fundacion_lemuel_co/" target='_blank' rel="noopener noreferrer" className="text-orange-500 hover:text-orange-700">
+              <FaInstagram size={20} />
+            </a>
+          </div>
+        </div>
+        <hr className="my-6 border-orange-500" />
+        <div className="text-center text-sm text-orange-600">
+          © 2024 Potrero Digital. Todos los derechos reservados.
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

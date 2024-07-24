@@ -21,7 +21,6 @@ const ContactForm = ({ row, textButton }) => {
         'YOUR_TEMPLATE_ID',
         form.current,
         'YOUR_PUBLIC_KEY'
-        
       );
       console.log('Formulario enviado correctamente', result.text);
       setMessage('Mensaje enviado correctamente');

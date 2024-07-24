@@ -55,14 +55,16 @@ body {
   text-align: center;
   font-weight: 500;
   border-radius: 28px;
-  background-color: #626C2A;
+  background-color: #f58634;
   color: #ffffff;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn__principal:hover {
-  background-color: #495024;
+  background-color: #d97329;
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-container-wrapper {
@@ -108,13 +110,63 @@ body {
 }
 
 .truncate {
-  white-space: nowrap; /* No permite que el texto se envuelva a la siguiente línea */
-  overflow: hidden; /* Oculta el texto que no cabe en el contenedor */
-  text-overflow: ellipsis; /* Añade "..." al final del texto truncado */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .single-line {
-  white-space: nowrap; /* No permite que el texto se envuelva a la siguiente línea */
-  overflow: hidden; /* Oculta el texto que no cabe en el contenedor */
-  text-overflow: ellipsis; /* Añade "..." al final del texto truncado */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-container {
+  margin: 10px;
+  padding: 0;
+}
+
+.card-container img {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.card-title {
+  margin: 10px 0;
+  padding: 0;
+}
+
+.card-text {
+  margin: 10px 0;
+  padding: 0;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+/* Agrega este CSS para ajustar el espaciado en móvil */
+@media (max-width: 768px) {
+  .footer__container {
+    margin-top: 2rem;
+  }
 }

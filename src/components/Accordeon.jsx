@@ -1,17 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-function Accordeon() {
+function Accordeon({ openSection: initialOpenSection }) {
+  const [openSection, setOpenSection] = useState(initialOpenSection || '');
+
+  useEffect(() => {
+    if (initialOpenSection) {
+      setOpenSection(initialOpenSection);
+    }
+  }, [initialOpenSection]);
+
+  const toggleSection = (section) => {
+    setOpenSection(openSection === section ? '' : section);
+  };
+
   return (
     <div className="m-2 space-y-2">
-      <div className="group flex flex-col rounded-lg text-white" tabIndex="1">
-        <div className="flex bg-orange-500 p-5 rounded-lg cursor-pointer items-center justify-between group-focus-within:rounded-t-md group-focus-within:rounded-b-none">
+      <div id="historia" className="group flex flex-col rounded-lg text-white" tabIndex="1">
+        <div
+          className="flex bg-orange-500 p-5 rounded-lg cursor-pointer items-center justify-between"
+          onClick={() => toggleSection('historia')}
+        >
           <h1 className="font-bold text-xl">Historia</h1>
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-            className="h-2 w-3 transition-all duration-500 group-focus-within:-rotate-180"
+            className={`h-2 w-3 transition-all duration-500 ${openSection === 'historia' ? '-rotate-180' : ''}`}
+            alt="Chevron"
           />
         </div>
-        <div className="invisible bg-white text-black text-justify max-h-0 opacity-0 rounded-b-md border border-orange-200 transition-all group-focus-within:visible group-focus-within:p-5 group-focus-within:max-h-screen group-focus-within:opacity-100 group-focus-within:duration-1000">
+        <div
+          className={`${
+            openSection === 'historia' ? 'visible max-h-screen p-5 opacity-100' : 'invisible max-h-0 opacity-0'
+          } bg-white text-black text-justify rounded-b-md border border-orange-200 transition-all duration-1000`}
+        >
           <p className='pb-2'>
             Nacimos en la ciudad de Córdoba capital por iniciativa de la pastora Viviana Safita de Villarreal,
             quien ante la necesidad económica que estaba atravesando el país, buscó la manera de ayudar a lo más
@@ -37,14 +57,22 @@ function Accordeon() {
         </div>
       </div>
       <div className="group flex flex-col rounded-lg text-white" tabIndex="1">
-        <div className="flex bg-orange-500 p-5 rounded-lg cursor-pointer items-center justify-between group-focus-within:rounded-t-md group-focus-within:rounded-b-none">
+        <div
+          className="flex bg-orange-500 p-5 rounded-lg cursor-pointer items-center justify-between"
+          onClick={() => toggleSection('colaboraciones')}
+        >
           <h1 className="font-bold text-xl">Colaboraciones y Apoyo</h1>
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-            className="h-2 w-3 transition-all duration-500 group-focus-within:-rotate-180"
+            className={`h-2 w-3 transition-all duration-500 ${openSection === 'colaboraciones' ? '-rotate-180' : ''}`}
+            alt="Chevron"
           />
         </div>
-        <div className="invisible bg-white text-black text-justify max-h-0 opacity-0 rounded-b-md border border-orange-200 transition-all group-focus-within:visible group-focus-within:p-5 group-focus-within:max-h-screen group-focus-within:opacity-100 group-focus-within:duration-1000">
+        <div
+          className={`${
+            openSection === 'colaboraciones' ? 'visible max-h-screen p-5 opacity-100' : 'invisible max-h-0 opacity-0'
+          } bg-white text-black text-justify rounded-b-md border border-orange-200 transition-all duration-1000`}
+        >
           <p className='pb-2'>
             Es muy importante reconocer y resaltar el apoyo constante de los voluntarios que forman parte de nuestra institución, así como de los comerciantes locales que se suman día a día a esta loable labor. También es crucial destacar que nuestro trabajo siempre se realiza en red, buscando unirnos al esfuerzo institucional brindado por el municipio, la provincia y la nación.
           </p>
@@ -55,22 +83,32 @@ function Accordeon() {
             Todos los talleres brindados son de capacitación y formación para el trabajo, buscando brindar nuevas herramientas a los participantes para que puedan aplicarlas en la búsqueda laboral. Todas las colaboraciones que puedan sumarse serán bienvenidas, ya que nuestra idea es seguir generando espacios de manera gratuita, pero para ello es fundamental sostener nuestra institución.
           </p>
           <p className='py-2'>
-            Queremos expresar nuestra más profunda gratitud primeramente a Natalia Razzetti quien junto a Caro Alfonso actuaron como puente para que la empresa Qservicessoftware conociera esta maravillosa obra de amor. Gracias a su intervención y al apoyo del equipo de trabajo que sin dudarlo se unieron voluntariamente a esta causa noble, realizando un aporte económico crucial. Este generoso apoyo nos permitió adquirir los materiales necesarios para completar el nuevo espacio, donde los niños pueden disfrutar de su merienda y participar en talleres de gastronomía, además de contar con un área áulica para su aprendizaje. Su contribución ha sido fundamental para llevar a cabo esta iniciativa que tanto beneficia a nuestra comunidad.
+            
+            Queremos expresar nuestra más profunda gratitud primeramente a Natalia Razzetti y Caro Alfonso, quienes actuaron como puente para que la empresa Qservicessoftware conociera esta maravillosa obra de amor. Gracias a su intervención y al apoyo del equipo de trabajo que, sin dudarlo, se unieron voluntariamente a esta noble causa y realizaron un aporte económico crucial, pudimos adquirir los materiales necesarios para completar el nuevo espacio donde los niños pueden disfrutar de su merienda, participar en talleres de gastronomía y contar con un área áulica para su aprendizaje. 
           </p>
         </div>
       </div>
       <div className="group flex flex-col rounded-lg text-white" tabIndex="1">
-        <div className="flex bg-orange-500 p-5 rounded-lg cursor-pointer items-center justify-between group-focus-within:rounded-t-md group-focus-within:rounded-b-none">
+        <div
+          className="flex bg-orange-500 p-5 rounded-lg cursor-pointer items-center justify-between"
+          onClick={() => toggleSection('creemos')}
+        >
           <h1 className="font-bold text-xl">Dónde Estamos y Qué Creemos</h1>
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-            className="h-2 w-3 transition-all duration-500 group-focus-within:-rotate-180"
+            className={`h-2 w-3 transition-all duration-500 ${openSection === 'creemos' ? '-rotate-180' : ''}`}
+            alt="Chevron"
           />
         </div>
-        <div className="invisible bg-white text-black text-justify max-h-0 opacity-0 rounded-b-md border border-orange-200 transition-all group-focus-within:visible group-focus-within:p-5 group-focus-within:max-h-screen group-focus-within:opacity-100 group-focus-within:duration-1000">
+        <div
+          className={`${
+            openSection === 'creemos' ? 'visible max-h-screen p-5 opacity-100' : 'invisible max-h-0 opacity-0'
+          } bg-white text-black text-justify rounded-b-md border border-orange-200 transition-all duration-1000`}
+        >
           <p className='py-2'>
             Nuestra fundación se encuentra ubicada en el barrio mutual más Precisamente en la calle Luigi cossia 1197, es aquí donde abarcamos todas las áreas social, deportiva, cultural y espiritual... queremos que sepas que somos una institución sin fines de lucro y sin credo religioso.
-            Así que no necesita ser parte de la comunidad cristiana para unirte a nosotros o recibir nuestra ayuda estamos aquí para acompañarte.          </p>
+            Así que no necesita ser parte de la comunidad cristiana para unirte a nosotros o recibir nuestra ayuda estamos aquí para acompañarte.
+          </p>
         </div>
       </div>
     </div>
