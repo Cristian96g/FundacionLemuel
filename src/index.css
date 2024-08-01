@@ -34,10 +34,20 @@
 
   .card-title {
     @apply text-xl font-semibold text-[#52658d] text-justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Limita el título a 1 línea */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .card-text {
     @apply text-sm text-[#52658d] text-justify flex-grow;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita el texto a 3 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .read-more {

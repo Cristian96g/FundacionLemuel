@@ -1,8 +1,15 @@
+// src/components/Footer.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaFacebook } from "react-icons/fa";
-import logo from '../assets/logo.png'; // Asegúrate de que la ruta sea correcta
+import logo from '../assets/logo.png';
 
+/**
+ * Componente Footer que muestra el pie de página del sitio web.
+ * Incluye enlaces de navegación y redes sociales.
+ *
+ * @returns {JSX.Element} El componente renderizado.
+ */
 const Footer = () => {
   return (
     <footer className="bg-white py-6">
@@ -14,9 +21,9 @@ const Footer = () => {
             </Link>
           </div>
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-            <Link to="/about" className="text-orange-500 hover:text-orange-700">Nosotros</Link>
-            <Link to="/activities" className="text-orange-500 hover:text-orange-700">Actividades</Link>
-            <Link to="/contact" className="text-orange-500 hover:text-orange-700">Contacto</Link>
+            <Link to="/about#about" className="text-orange-500 hover:text-orange-700">Nosotros</Link>
+            <Link to="/activities#activities" className="text-orange-500 hover:text-orange-700">Actividades</Link>
+            <Link to="/contact#contact" className="text-orange-500 hover:text-orange-700">Contacto</Link>
           </div>
           <div className="mt-6 md:mt-0 flex space-x-4">
             <a href="https://www.facebook.com/profile.php?id=100081438307111&locale=az_AZ" target='_blank' rel="noopener noreferrer" className="text-orange-500 hover:text-orange-700">

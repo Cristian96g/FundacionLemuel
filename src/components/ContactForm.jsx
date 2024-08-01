@@ -3,8 +3,16 @@ import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import Button from './Button';
 
+/**
+ * Componente ContactForm que muestra un formulario de contacto.
+ *
+ * @param {Object} props - Las propiedades del componente.
+ * @param {number} props.row - La cantidad de filas del textarea.
+ * @param {string} props.textButton - El texto del botón de envío.
+ * @returns {JSX.Element} El componente renderizado.
+ */
 const ContactForm = ({ row, textButton }) => {
-    const [message, setMessage] = useState(null);
+  const [message, setMessage] = useState(null);
   const {
     register,
     handleSubmit,
@@ -14,6 +22,11 @@ const ContactForm = ({ row, textButton }) => {
 
   const form = useRef();
 
+  /**
+   * Maneja el envío del formulario.
+   *
+   * @param {Object} data - Los datos del formulario.
+   */
   const onSubmit = async (data) => {
     try {
       const result = await emailjs.sendForm(

@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import defaultImage from '../assets/defaultImage.jpg'; // Asegúrate de que la ruta es correcta
+import defaultImage from '../assets/defaultImage.jpg'; 
 
 /**
- * Trunca el texto si excede la longitud máxima especificada.
+ * Trunca el texto si excede la longitud máxima especificada y agrega un par de letras antes de los puntos suspensivos.
  *
  * @param {string} text - El texto a truncar.
  * @param {number} maxLength - La longitud máxima permitida para el texto.
- * @returns {string} El texto truncado.
+ * @returns {string} El texto truncado con letras adicionales antes de los puntos suspensivos.
  */
 const truncateText = (text, maxLength) => {
-  return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+  const additionalText = '...'; // Texto adicional antes de los puntos suspensivos
+  const additionalLength = additionalText.length; // Longitud del texto adicional
+  return text.length > maxLength ? text.substring(0, maxLength - additionalLength) + additionalText : text;
 }
 
 /**
@@ -25,12 +27,12 @@ const truncateText = (text, maxLength) => {
  * @returns {JSX.Element} La tarjeta renderizada.
  */
 const Card = ({ id, title, text, img, active }) => {
-  const imageSrc = img || defaultImage;
+  const imageSrc = img || defaultImage; // Utiliza la imagen proporcionada o una imagen predeterminada si no se proporciona
 
   return (
     <div className='card-container group hover:no-underline focus:no-underline dark:bg-white'>
       <div className='relative'>
-        <img className="object-cover object-center w-full h-60 rounded-lg" src={imageSrc} alt={title} />
+        <img className="object-cover object-center w-full h-60 rounded-lg" src={imageSrc} alt={title} /> {/* Imagen de la tarjeta */}
       </div>
       {active ? (
         // No se muestra el Link si active es true
@@ -38,18 +40,18 @@ const Card = ({ id, title, text, img, active }) => {
       ) : (
         <div className="flex flex-col justify-between h-full">
           <div>
-            <h1 className='mt-6 card-title truncate'>
-              {title}
+            <h1 className='mt-6 card-title'>
+              {truncateText(title, 42)} {/* Título truncado de la tarjeta */}
             </h1>
-            <hr className='w-32 my-3 text-orange-500' />
-            <p className='card-text truncate'>
-              {truncateText(text.replace(/<[^>]+>/g, ''), 50)}
+            <hr className='w-32 my-3 text-orange-500' /> {/* Línea horizontal de separación */}
+            <p className='card-text mb-1'> {/* Párrafo con texto truncado y margen inferior reducido */}
+              {truncateText(text.replace(/<[^>]+>/g, ''), 50)} {/* Elimina etiquetas HTML y trunca el texto */}
             </p>
           </div>
           <Link
-            to={`/details/${id}`}
+            to={`/details/${id}`} // Enlace a la página de detalles con el estado de la tarjeta
             state={{ title, text, img: imageSrc }}
-            className='read-more'>
+            className='read-more mt-1'> {/* Clase para el enlace "Leer Más" con margen superior reducido */}
             Leer Más
           </Link>
         </div>

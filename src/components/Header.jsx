@@ -1,17 +1,24 @@
+// src/components/Header.jsx
 import { useState } from "react";
 import { IoIosMenu, IoIosClose } from "react-icons/io";
-import { navLinks } from '../constants/index.js'
-import logo from '../assets/logo.png'
+import { navLinks } from '../constants/index.js';
+import logo from '../assets/logo.png';
 import { NavLink } from "react-router-dom";
 
+/**
+ * Componente Header que muestra la cabecera del sitio web.
+ * Incluye la navegación y el logo.
+ *
+ * @returns {JSX.Element} El componente renderizado.
+ */
 const Header = () => {
     const [open, setOpen] = useState(false);
-    
+
     return (
         <>
-            <div className="relative ">
+            <div className="relative">
                 <div className="container px-4 sm:px-6">
-                    <div className="flex justify-between items-center  py-6 md:space-x-10">
+                    <div className="flex justify-between items-center py-6 md:space-x-10">
                         <div className="flex justify-start lg:w-0 lg:flex-1">
                             <NavLink to="/">
                                 <span className="sr-only">Workflow</span>
@@ -43,14 +50,13 @@ const Header = () => {
                                 >
                                     {nav.title}
                                 </NavLink>
-                             
                             ))}
                         </nav>
                     </div>
                 </div>
-                {/*Mobile menu*/}
+                {/* Mobile menu */}
                 <div className={`transition-all duration-700 ${open ? "block md:hidden" : "hidden"}`}>
-                    <div className="bg-white py-3 px-4  ">
+                    <div className="bg-white py-3 px-4">
                         {navLinks.map((nav) => (
                             <NavLink
                                 key={nav.id}
@@ -58,8 +64,8 @@ const Header = () => {
                                 className="block text-base -m-3 p-3 font-medium text-[#F27B35] hover:text-orange-700 hover:bg-gray-50"
                                 onClick={() => setOpen(false)}
                             >
-                        <span className="ml-3 text-base font-medium ">
-                                {nav.title}
+                                <span className="ml-3 text-base font-medium">
+                                    {nav.title}
                                 </span>
                             </NavLink>
                         ))}
@@ -71,10 +77,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-
-  
- 
-  
-  

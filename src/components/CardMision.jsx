@@ -1,5 +1,14 @@
 import React from 'react';
 
+/**
+ * Componente CardMision para mostrar una tarjeta con información sobre una misión.
+ *
+ * @param {Object} props - Las propiedades del componente.
+ * @param {string} props.text - El texto de la tarjeta.
+ * @param {string} props.title - El título de la tarjeta.
+ * @param {Function} props.icon - El icono a mostrar en la tarjeta.
+ * @returns {JSX.Element} La tarjeta renderizada.
+ */
 const CardMision = ({ text, title, icon: Icon }) => {
   return (
     <div className="block rounded-xl border border-orange-100 p-8 shadow-xl transition hover:border-orange-500/10 hover:shadow-orange-500/10 text-center">

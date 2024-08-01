@@ -1,5 +1,10 @@
-import React from 'react'
+import React from 'react';
 
+/**
+ * Componente Pagination que muestra una paginación.
+ *
+ * @returns {JSX.Element} El componente renderizado.
+ */
 function Pagination() {
     return (
         <div className='flex justify-center my-6'>
@@ -42,4 +47,4 @@ function Pagination() {
         </div>  
     )
 }
-export default Pagination
+export default Pagination;

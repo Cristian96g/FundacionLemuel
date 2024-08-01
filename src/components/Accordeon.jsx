@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-function Accordeon({ openSection: initialOpenSection }) {
+/**
+ * Componente Accordion que permite mostrar y ocultar secciones de contenido.
+ *
+ * @param {Object} props - Las propiedades del componente.
+ * @param {string} props.openSection - La sección inicial que debe estar abierta.
+ * @returns {JSX.Element} El componente renderizado.
+ */
+function Accordion({ openSection: initialOpenSection }) {
   const [openSection, setOpenSection] = useState(initialOpenSection || '');
 
   useEffect(() => {
@@ -9,12 +16,18 @@ function Accordeon({ openSection: initialOpenSection }) {
     }
   }, [initialOpenSection]);
 
+  /**
+   * Alterna la visibilidad de una sección.
+   *
+   * @param {string} section - La sección a alternar.
+   */
   const toggleSection = (section) => {
     setOpenSection(openSection === section ? '' : section);
   };
 
   return (
     <div className="m-2 space-y-2">
+      {/* Sección Historia */}
       <div id="historia" className="group flex flex-col rounded-lg text-white" tabIndex="1">
         <div
           className="flex bg-orange-500 p-5 rounded-lg cursor-pointer items-center justify-between"
@@ -34,8 +47,8 @@ function Accordeon({ openSection: initialOpenSection }) {
         >
           <p className='pb-2'>
             Nacimos en la ciudad de Córdoba capital por iniciativa de la pastora Viviana Safita de Villarreal,
-            quien ante la necesidad económica que estaba atravesando el país, buscó la manera de ayudar a lo más
-            necesitado. Con una visión clara brindada por Raul Alberto Villareal su esposo, Presidente y Fundador del
+            quien ante la necesidad económica que estaba atravesando el país, buscó la manera de ayudar a los más
+            necesitados. Con una visión clara brindada por Raul Alberto Villareal su esposo, Presidente y Fundador del
             Ministerio M.E.D.E.A
           </p>
           <p className='py-2'>
@@ -56,6 +69,8 @@ function Accordeon({ openSection: initialOpenSection }) {
           </p>
         </div>
       </div>
+
+      {/* Sección Colaboraciones y Apoyo */}
       <div className="group flex flex-col rounded-lg text-white" tabIndex="1">
         <div
           className="flex bg-orange-500 p-5 rounded-lg cursor-pointer items-center justify-between"
@@ -80,14 +95,15 @@ function Accordeon({ openSection: initialOpenSection }) {
             En estos últimos dos años, CGC nos ha acompañado en varios proyectos como Potrero Digital y proyectos con Creer Hacer, y ahora estamos realizando una diplomatura de Transformadores Sociales. Fuimos seleccionados, entre muchos proyectos, para llevar adelante un trabajo conjunto con la Asociación Espacio Red en Comunidad, contando con el apoyo de las empresas Cookins y CGC.
           </p>
           <p className='py-2'>
-            Todos los talleres brindados son de capacitación y formación para el trabajo, buscando brindar nuevas herramientas a los participantes para que puedan aplicarlas en la búsqueda laboral. Todas las colaboraciones que puedan sumarse serán bienvenidas, ya que nuestra idea es seguir generando espacios de manera gratuita, pero para ello es fundamental sostener nuestra institución.
+            Todos los talleres brindados son de capacitación y formación para el trabajo, buscando brindar nuevas herramientas a los participantes para que puedan aplicarlas en la búsqueda laboral. Todas las colaboraciones que puedan sumarse serán bienvenidas, ya que nuestra idea es seguir generando espacios de manera gratuita, pero para ello es fundamental sostener nuestra institución.
           </p>
           <p className='py-2'>
-            
-            Queremos expresar nuestra más profunda gratitud primeramente a Natalia Razzetti y Caro Alfonso, quienes actuaron como puente para que la empresa Qservicessoftware conociera esta maravillosa obra de amor. Gracias a su intervención y al apoyo del equipo de trabajo que, sin dudarlo, se unieron voluntariamente a esta noble causa y realizaron un aporte económico crucial, pudimos adquirir los materiales necesarios para completar el nuevo espacio donde los niños pueden disfrutar de su merienda, participar en talleres de gastronomía y contar con un área áulica para su aprendizaje. 
+            Queremos expresar nuestra más profunda gratitud primeramente a Natalia Razzetti y Caro Alfonso, quienes actuaron como puente para que la empresa Qservicessoftware conociera esta maravillosa obra de amor. Gracias a su intervención y al apoyo del equipo de trabajo que, sin dudarlo, se unieron voluntariamente a esta noble causa y realizaron un aporte económico crucial, pudimos adquirir los materiales necesarios para completar el nuevo espacio donde los niños pueden disfrutar de su merienda, participar en talleres de gastronomía y contar con un área áulica para su aprendizaje.
           </p>
         </div>
       </div>
+
+      {/* Sección Dónde Estamos y Qué Creemos */}
       <div className="group flex flex-col rounded-lg text-white" tabIndex="1">
         <div
           className="flex bg-orange-500 p-5 rounded-lg cursor-pointer items-center justify-between"
@@ -106,7 +122,7 @@ function Accordeon({ openSection: initialOpenSection }) {
           } bg-white text-black text-justify rounded-b-md border border-orange-200 transition-all duration-1000`}
         >
           <p className='py-2'>
-            Nuestra fundación se encuentra ubicada en el barrio mutual más Precisamente en la calle Luigi cossia 1197, es aquí donde abarcamos todas las áreas social, deportiva, cultural y espiritual... queremos que sepas que somos una institución sin fines de lucro y sin credo religioso.
+            Nuestra fundación se encuentra ubicada en el barrio mutual más precisamente en la calle Luigi Cossia 1197, es aquí donde abarcamos todas las áreas social, deportiva, cultural y espiritual... queremos que sepas que somos una institución sin fines de lucro y sin credo religioso.
             Así que no necesita ser parte de la comunidad cristiana para unirte a nosotros o recibir nuestra ayuda estamos aquí para acompañarte.
           </p>
         </div>
@@ -115,4 +131,4 @@ function Accordeon({ openSection: initialOpenSection }) {
   );
 }
 
-export default Accordeon;
+export default Accordion;

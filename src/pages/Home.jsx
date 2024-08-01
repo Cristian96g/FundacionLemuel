@@ -1,24 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import home1 from '../assets/home1.jpg';
 import home2 from '../assets/home2.jpg';
 import home3 from '../assets/home3.jpg';
 import CardMision from '../components/CardMision';
 import imgdonate from '../assets/imgDonate.jpg';
-import informationCard from "../constants/informationCardHome.js"; // Asegúrate de ajustar la ruta
+import informationCard from "../constants/informationCardHome.js";
 import ContactForm from '../components/ContactForm.jsx';
 import { FaSchool, FaHeart, FaSmile, FaGift } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import '../App.css'; // Asegúrate de importar tus estilos
-import Button from '../components/Button'; // Importa tu componente Button
+import '../App.css';
 
 const Home = () => {
   return (
     <>
-      {/* ============== Hero section ============== */}
       <section className="hero__section pt-[2.5rem] 2xl:h-[calc(100vh-88px)]">
         <div className="container">
           <div className="flex flex-col lg:flex-row gap-[4.375rem] md:gap-[5.625rem] items-center justify-between">
-            {/* ============== Hero content ============== */}
             <div>
               <div className="flex flex-col items-center justify-center md:justify-start md:items-start lg:w-[35.625rem]">
                 <h1 className="text-center md:text-start text-[2.25rem] leading-[2.875rem] font-[800] md:text-[3.75rem] text-[#181A1E] md:leading-[3.75rem]">
@@ -31,15 +28,12 @@ const Home = () => {
                   Nuestro objetivo es consolidar y afianzar al ser humano, trabajando de manera integral para que cada individuo
                   pueda alcanzar la plenitud deseada.
                 </p>
-                <Button
-                  className="btn__principal mt-[1.5rem] py-2 px-4 rounded"
-                  text="Ver más"
-                  onClick={() => window.location.href = "/about"}
-                />
+                <Link to="/about#historia" className="btn__principal mt-[1.5rem] py-2 px-4 rounded">
+                  Ver más
+                </Link>
               </div>
             </div>
 
-            {/* ============== Hero content ============== */}
             <div className="flex gap-[1.875rem] justify-end">
               <div>
                 <img className="w-full" src={home1} alt="Home 1" />
@@ -53,8 +47,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* ============== Mision content ============== */}
 
       <section className="text-black">
         <div className="mx-auto max-w-screen-xl px-[1rem] py-[2rem] sm:px-[1.5rem] sm:py-[3rem] lg:px-[2rem] lg:py-[1rem] lg:pt-0">
@@ -89,8 +81,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* ============== Actividades Recientes ============== */}
 
       <section className="bg-white">
         <div className="container px-[1.5rem] py-[2.5rem] mx-auto">
