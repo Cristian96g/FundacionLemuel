@@ -1,5 +1,14 @@
 import React from 'react';
 
+/**
+ * Componente CtaDetails que muestra detalles de una llamada a la acción.
+ *
+ * @param {Object} props - Las propiedades del componente.
+ * @param {string} props.title - El título del detalle.
+ * @param {string} props.text - El texto del detalle.
+ * @param {string} props.img - La URL de la imagen.
+ * @returns {JSX.Element} El componente renderizado.
+ */
 const CtaDetails = ({ title, text, img }) => {
   return (
     <div className="container">

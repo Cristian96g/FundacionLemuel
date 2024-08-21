@@ -4,18 +4,16 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-:root{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color-scheme: "white";
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color-scheme: "white";
 }
-
 
 .color__sub {
   color: #495024;
 }
-
 
 .input__style {
   width: 100%;
@@ -28,14 +26,14 @@ body {
   outline-offset: 2px;
 }
 
-.label__style{
+.label__style {
   display: block;
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  font-size: 0.875rem/* 14px */;
-  line-height: 1.25rem/* 20px */;
-  margin-bottom: 0.5rem/* 8px */;
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+  margin-bottom: 0.5rem /* 8px */;
 }
 
 .title__main {
@@ -57,12 +55,119 @@ body {
   text-align: center;
   font-weight: 500;
   border-radius: 28px;
-  background-color: #626C2A;
+  background-color: #f58634;
   color: #ffffff;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn__principal:hover {
-  background-color: #495024;
+  background-color: #d97329;
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.carousel-container-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-item {
+  flex: none;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: #f97316; /* Orange background */
+  color: white; /* White text */
+  font-weight: bold; /* Bold text */
+  padding: 0.5rem 1rem; /* Padding */
+  border-radius: 0.375rem; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #c2410c; /* Darker orange background on hover */
+}
+
+.nav-button-left {
+  left: 0;
+}
+
+.nav-button-right {
+  right: 0;
+}
+
+.truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.single-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-container {
+  margin: 10px;
+  padding: 0;
+}
+
+.card-container img {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.card-title {
+  margin: 10px 0;
+  padding: 0;
+}
+
+.card-text {
+  margin: 10px 0;
+  padding: 0;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+/* Agrega este CSS para ajustar el espaciado en móvil */
+@media (max-width: 768px) {
+  .footer__container {
+    margin-top: 2rem;
+  }
+}
+

@@ -20,6 +20,7 @@
   .header {
     @apply w-full h-[100px] leading-[100px];
   }
+
   .heading {
     @apply text-[44px] leading-[54px] font-[700] text-headingColor;
   }
@@ -34,14 +35,36 @@
 
   .card-title {
     @apply text-xl font-semibold text-[#52658d] text-justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Limita el título a 1 línea */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .card-text {
     @apply text-sm text-[#52658d] text-justify flex-grow;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita el texto a 3 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .read-more {
     @apply inline-block mt-4 text-orange-500 underline hover:text-orange-400;
+  }
+
+  .accordion-section {
+    @apply bg-white text-black text-justify rounded-b-md border border-orange-200 transition-all duration-1000 overflow-hidden;
+  }
+
+  .accordion-title {
+    @apply flex bg-orange-500 p-5 rounded-lg cursor-pointer items-center justify-between text-xl font-bold;
+  }
+
+  .accordion-content {
+    @apply p-5;
   }
 }
 
@@ -53,6 +76,10 @@
   section {
     @apply px-[35px];
   }
+
+  .heading {
+    @apply text-[36px] leading-[46px];
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -63,6 +90,22 @@
   .text__para {
     @apply text-[16px] leading-7 mt-3;
   }
+
+  .card-title {
+    @apply text-lg; /* Ajustar tamaño de fuente para dispositivos más pequeños */
+  }
+
+  .card-text {
+    @apply text-sm; /* Ajustar tamaño de fuente para dispositivos más pequeños */
+  }
+
+  .accordion-title {
+    @apply text-lg; /* Ajustar tamaño de fuente para dispositivos más pequeños */
+  }
+
+  .accordion-content {
+    @apply text-sm; /* Ajustar tamaño de fuente para dispositivos más pequeños */
+  }
 }
 
 @media only screen and (max-width: 640px) {
@@ -72,5 +115,29 @@
 
   section {
     @apply px-0;
+  }
+
+  .heading {
+    @apply text-[22px] leading-[32px];
+  }
+
+  .text__para {
+    @apply text-[14px] leading-6 mt-2;
+  }
+
+  .card-title {
+    @apply text-base; /* Ajustar tamaño de fuente para dispositivos más pequeños */
+  }
+
+  .card-text {
+    @apply text-xs; /* Ajustar tamaño de fuente para dispositivos más pequeños */
+  }
+
+  .accordion-title {
+    @apply text-base; /* Ajustar tamaño de fuente para dispositivos más pequeños */
+  }
+
+  .accordion-content {
+    @apply text-xs; /* Ajustar tamaño de fuente para dispositivos más pequeños */
   }
 }

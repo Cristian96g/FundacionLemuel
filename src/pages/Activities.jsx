@@ -10,10 +10,12 @@ const Activities = () => {
   const [startX, setStartX] = useState(0);
   const [startScroll, setStartScroll] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth); // Añadido para gestionar los cambios de tamaño
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
+      setWindowWidth(window.innerWidth); // Actualiza el ancho de la ventana
     };
 
     window.addEventListener('resize', handleResize);
@@ -37,31 +39,7 @@ const Activities = () => {
   useEffect(() => {
     const initialScrollX = sections.map((_, index) => adjustScrollX(index, 0));
     setScrollX(initialScrollX);
-  }, []);
-
-  useEffect(() => {
-    const handleTouchStart = (e, index) => onMouseDown(e.touches[0], index);
-    const handleTouchMove = (e, index) => onMouseMove(e.touches[0], index);
-    const handleTouchEnd = (index) => onMouseUp(index);
-
-    containerRef.current.forEach((container, index) => {
-      if (container) {
-        container.addEventListener('touchstart', (e) => handleTouchStart(e, index), { passive: false });
-        container.addEventListener('touchmove', (e) => handleTouchMove(e, index), { passive: false });
-        container.addEventListener('touchend', () => handleTouchEnd(index));
-      }
-    });
-
-    return () => {
-      containerRef.current.forEach((container, index) => {
-        if (container) {
-          container.removeEventListener('touchstart', (e) => handleTouchStart(e, index));
-          container.removeEventListener('touchmove', (e) => handleTouchMove(e, index));
-          container.removeEventListener('touchend', () => handleTouchEnd(index));
-        }
-      });
-    };
-  }, [scrollX]);
+  }, [windowWidth]); // Añadido windowWidth como dependencia para que se actualice al cambiar el tamaño de la ventana
 
   const onMouseDown = (e, index) => {
     if (isMobile) return;
