@@ -28,16 +28,14 @@ const truncateText = (text, maxLength) => {
  */
 const Card = ({ id, title, text, img, active }) => {
   const imageSrc = img || defaultImage; // Utiliza la imagen proporcionada o una imagen predeterminada si no se proporciona
+  const isConstruction = id === "Cn"; // Identificar si es una tarjeta de "Construcción"
 
   return (
     <div className='card-container group hover:no-underline focus:no-underline dark:bg-white'>
       <div className='relative'>
         <img className="object-cover object-center w-full h-60 rounded-lg" src={imageSrc} alt={title} /> {/* Imagen de la tarjeta */}
       </div>
-      {active ? (
-        // No se muestra el Link si active es true
-        null
-      ) : (
+      {!isConstruction && ( // Mostrar el contenido solo si no es una tarjeta de "Construcción"
         <div className="flex flex-col justify-between h-full">
           <div>
             <h1 className='mt-6 card-title'>
